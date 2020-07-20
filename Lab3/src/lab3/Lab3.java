@@ -16,7 +16,7 @@ public class Lab3 {
      */
     public static void main(String[] args) {
         Archivo ar1 = new Archivo("ar1", LocalDateTime.now(), "hola\nEste es un archivo de texto\nfin" );
-        System.out.println("Archivo:\n" + ar1.toString());
+        System.out.println(ar1.toString());
     }
     
 }

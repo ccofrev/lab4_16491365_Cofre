@@ -51,7 +51,7 @@ public class Archivo {
     public String toString() {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = tsUltimaModificacion.format(myFormatObj);
-        return "Archivo{" + "nombre=" + nombre + ", tsUltimaModificacion=" + formattedDate + ", contenido=" + contenido + '}';
+        return "Archivo{\n\t" + "Nombre: " + nombre + ",\n\tUltima Modificacion: " + formattedDate + ",\n\tContenido:\n\t\t" + contenido.replace("\n", "\n\t\t") + "\n\t}";
     }
     
     
