@@ -11,24 +11,38 @@ import java.time.format.DateTimeFormatter;
  */
 public class Archivo {
     private String nombre;
+    private LocalDateTime tsCreacion;
     private LocalDateTime tsUltimaModificacion;
     private String contenido;
 
-    public Archivo() {
-    }
-
-    public Archivo(String nombre, LocalDateTime tsUltimaModificacion, String contenido) {
+    public Archivo(String nombre) {
         this.nombre = nombre;
-        this.tsUltimaModificacion = tsUltimaModificacion;
-        this.contenido = contenido;
+        tsCreacion = LocalDateTime.now();
+        tsUltimaModificacion = tsCreacion;
     }
 
+    public Archivo(String nombre, String contenido) {
+        this.nombre = nombre;
+        this.contenido = contenido;
+        tsCreacion = LocalDateTime.now();
+        tsUltimaModificacion = tsCreacion;
+    }
+    
+    // getters y setters
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public LocalDateTime getTsCreacion() {
+        return tsCreacion;
+    }
+
+    public void setTsCreacion(LocalDateTime tsCreacion) {
+        this.tsCreacion = tsCreacion;
     }
 
     public LocalDateTime getTsUltimaModificacion() {
@@ -46,14 +60,18 @@ public class Archivo {
     public void setContenido(String contenido) {
         this.contenido = contenido;
     }
-
+    
+    public void actualizaContenido(String contenido) {
+        this.contenido = contenido;
+        this.tsUltimaModificacion = LocalDateTime.now();
+    } 
+    
     @Override
     public String toString() {
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formattedDate = tsUltimaModificacion.format(myFormatObj);
-        return "Archivo{\n\t" + "Nombre: " + nombre + ",\n\tUltima Modificacion: " + formattedDate + ",\n\tContenido:\n\t\t" + contenido.replace("\n", "\n\t\t") + "\n\t}";
+        DateTimeFormatter formatoTs = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String tsCreacionFormateada = tsCreacion.format(formatoTs);
+        String tsUMFormateada = tsUltimaModificacion.format(formatoTs);
+        return "Archivo{\n\t" + "Nombre: " + nombre + ",\n\tCreacion: " + tsCreacionFormateada +  ",\n\tUltima Modificacion: " + tsUMFormateada + ",\n\tContenido:\n\t\t" + contenido.replace("\n", "\n\t\t") + "\n\t}";
     }
-    
-    
     
 }
