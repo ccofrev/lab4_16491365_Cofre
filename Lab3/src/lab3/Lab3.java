@@ -30,8 +30,10 @@ public class Lab3 {
         ar1.actualizaContenido(ar1.getContenido() + "\nesta es una linea agregada al final del archivo.");
         System.out.println(ar1.toString());
         */
-        System.out.println(StringTools.diferencia("perrito", "perro"));
-        System.out.println(StringTools.interseccion("perrito", "perro"));
+        System.out.println("Salida: " + StringTools.compara("perro\nhola que tal\nn", "perro\nhi caca\nh"));
+        
+        //System.out.println(StringTools.diferencia2("perrito", "perro"));
+        //System.out.println(StringTools.interseccion("perrito", "perro"));
     }
     
 }
