@@ -8,6 +8,6 @@ package lab3;
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
  */
-public class Zona {
+public class Workspace extends Directorio{
     
 }

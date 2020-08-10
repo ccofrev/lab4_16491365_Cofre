@@ -5,6 +5,9 @@
  */
 package lab3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,7 +33,29 @@ public class Lab3 {
         ar1.actualizaContenido(ar1.getContenido() + "\nesta es una linea agregada al final del archivo.");
         System.out.println(ar1.toString());
         */
-        System.out.println("Salida: " + StringTools.compara("perro\nhola que tal\nn", "perro\nhi caca\nh"));
+        //System.out.println("Salida: " + StringTools.compara("perro\nhola que tal\nn", "perro\nhi caca\nh"));
+        
+        Archivo ar1 = new Archivo("ar1", "hola\nEste es un archivo de texto\nfin" );
+        Archivo ar2 = new Archivo("ar2", "hola\nEste es un archivo de texto\nfin" );
+        Archivo ar3 = new Archivo("ar3", "hola\nEste \nfin" );
+        
+        /*
+        if(ar1.equals(ar2)){
+            System.out.println("El archivo 1 es igual al archivo 2");
+        }
+        if(ar1.equals(ar3)){
+            System.out.println("El archivo 1 es igual al archivo 3");
+        }
+        if(ar2.equals(ar3)){
+            System.out.println("El archivo 2 es igual al archivo 3");
+        }*/
+        //Directorio carpeta1 = new Directorio("Carpeta1");
+        //carpeta1.addArchivo(ar1);
+        //carpeta1.addArchivo(ar2);
+        //carpeta1.addArchivo(ar3);
+        Directorio carpeta1 = new Directorio("Carpeta1", Arrays.asList(ar1, ar2, ar3));
+        
+        System.out.println(carpeta1.toString());
         
         //System.out.println(StringTools.diferencia2("perrito", "perro"));
         //System.out.println(StringTools.interseccion("perrito", "perro"));

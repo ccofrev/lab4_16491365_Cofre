@@ -5,6 +5,7 @@
 package lab3;
 import java.time.LocalDateTime; 
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 /**
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
@@ -14,6 +15,9 @@ public class Archivo {
     private LocalDateTime tsCreacion;
     private LocalDateTime tsUltimaModificacion;
     private String contenido;
+
+    public Archivo() {
+    }
 
     public Archivo(String nombre) {
         this.nombre = nombre;
@@ -73,5 +77,30 @@ public class Archivo {
         String tsUMFormateada = tsUltimaModificacion.format(formatoTs);
         return "Archivo{\n\t" + "Nombre: " + nombre + ",\n\tCreacion: " + tsCreacionFormateada +  ",\n\tUltima Modificacion: " + tsUMFormateada + ",\n\tContenido:\n\t\t" + contenido.replace("\n", "\n\t\t") + "\n\t}";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        final Archivo other = (Archivo) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+
+        if (!Objects.equals(this.contenido, other.contenido)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    public boolean reemplazable(Archivo archivo){
+        return (!this.equals(archivo) && tsCreacion.compareTo(archivo.getTsCreacion())>=0);        
+    }
+
+    
+    
     
 }
