@@ -48,6 +48,11 @@ public class Directorio {
         this.archivos = archivos;
     }
     
+    public void addArchivos(List<Archivo> archivos){
+        for(int i=0; i<archivos.size(); i++)
+            (this.archivos).add(archivos.get(i));
+    }
+    
     public void addArchivo(Archivo archivo){
         (this.archivos).add(archivo);
     }
@@ -62,10 +67,6 @@ public class Directorio {
     }
     
     
-    
-    
-    
-
-    
+        
     
 }

@@ -9,7 +9,40 @@ package lab3;
  * @author Carlos Cofré <carlos.cofre@usach.cl>
  */
 public class Usuario {
-    int id;
-    String nombre;
-    String mail;
+    private String nombre;
+    private String mail;
+
+    public Usuario() {
+    }
+
+    public Usuario(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Usuario(String nombre, String mail) {
+        this.nombre = nombre;
+        this.mail = mail;
+    }
+
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+    
+    
+    
+    
 }

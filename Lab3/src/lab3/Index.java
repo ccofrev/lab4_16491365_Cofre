@@ -12,10 +12,17 @@ import java.util.List;
  * @author Carlos Cofré <carlos.cofre@usach.cl>
  */
 public class Index {
+    
+    private String nombre;
     static List<Commit> commits;
 
+    
     public Index(){
         this.commits = new ArrayList<Commit>();
+    }
+
+    public Index(String nombre) {
+        this.nombre = nombre;
     }
     
     public Index(List<Commit> listaCommit) {
@@ -33,6 +40,7 @@ public class Index {
     public void addToListaCommit(Commit commit){
         (this.commits).add(commit);
     }
+    
     
     
     

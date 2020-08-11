@@ -53,9 +53,18 @@ public class Lab3 {
         //carpeta1.addArchivo(ar1);
         //carpeta1.addArchivo(ar2);
         //carpeta1.addArchivo(ar3);
-        Directorio carpeta1 = new Directorio("Carpeta1", Arrays.asList(ar1, ar2, ar3));
+        //Directorio carpeta1 = new Directorio("Carpeta1", Arrays.asList(ar1, ar2, ar3));
         
-        System.out.println(carpeta1.toString());
+        //System.out.println(carpeta1.toString());
+        
+        Repositorio repo1 = Git.init("Repositorio1");
+        repo1.getWorkspace().addArchivos(Arrays.asList(ar1, ar2, ar3));
+        
+        System.out.println(repo1.getWorkspace().toString());
+        System.out.println(repo1.getLocalRepository().toString());
+        System.out.println(repo1.getRemoteRepository().toString());
+
+        
         
         //System.out.println(StringTools.diferencia2("perrito", "perro"));
         //System.out.println(StringTools.interseccion("perrito", "perro"));

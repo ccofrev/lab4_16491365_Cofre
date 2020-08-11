@@ -6,6 +6,7 @@ package lab3;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -68,7 +69,16 @@ public class Commit {
     public void setArchivos(List archivos) {
         this.archivos = archivos;
     }
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.archivo);
+        hash = 41 * hash + Objects.hashCode(this.tsUltimaModificacion);
+        return hash;
+    }
+
     
     
 }
+
