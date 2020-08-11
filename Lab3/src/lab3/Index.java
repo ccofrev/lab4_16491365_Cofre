@@ -4,8 +4,7 @@
  */
 package lab3;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  *
@@ -13,33 +12,47 @@ import java.util.List;
  */
 public class Index {
     
+    //confirmado (committed), modificado (modified), y preparado (staged).
+    final int STAGED = 1, MODIFIED = 2, COMMITED = 3;
+    
     private String nombre;
-    static List<Commit> commits;
+    HashMap<String, Integer> archivos = new HashMap<String, Integer>();
 
     
-    public Index(){
-        this.commits = new ArrayList<Commit>();
+    public Index() {
     }
-
+    
     public Index(String nombre) {
         this.nombre = nombre;
     }
-    
-    public Index(List<Commit> listaCommit) {
-        this.commits = listaCommit;
+
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public List getListaCommit() {
-        return commits;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setListaCommit(List<Commit> commits) {
-        this.commits = commits;
+
+    public HashMap<String, Integer> getArchivos() {
+        return archivos;
+    }
+
+    public void setArchivos(HashMap<String, Integer> archivos) {
+        this.archivos = archivos;
     }
     
-    public void addToListaCommit(Commit commit){
-        (this.commits).add(commit);
+    public void addArchivo(String nombreArchivo){
+        archivos.put(nombreArchivo, STAGED);
     }
+
+    @Override
+    public String toString() {
+        return "Index{" + "nombre=" + nombre + ", archivos=" + archivos + '}';
+    }
+    
     
     
     

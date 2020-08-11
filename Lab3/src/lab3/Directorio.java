@@ -40,7 +40,7 @@ public class Directorio {
         this.nombre = nombre;
     }
     
-    public List getArchivos() {
+    public List<Archivo> getArchivos() {
         return archivos;
     }
 
@@ -66,7 +66,28 @@ public class Directorio {
         return( nombre + " {\n" + contenido + "}\n");
     }
     
-    
+    public Archivo getArchivo(String nombreArchivo){
         
+        for(int i=0; i < archivos.size(); i++) {
+            String s = archivos.get(i).getNombre();
+            if(nombreArchivo.equals(s)) {
+                return archivos.get(i);
+            }
+        }
+        return null;
+    }
+    
+    public boolean isIn(String nombreArchivo){
+        for(int i=0; i < archivos.size(); i++) {
+            String s = archivos.get(i).getNombre();
+            if(nombreArchivo.equals(s)) {
+                return true;
+                
+            }
+        }
+        return false;
+    }
+        
+    
     
 }

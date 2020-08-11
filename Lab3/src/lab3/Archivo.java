@@ -97,6 +97,7 @@ public class Archivo {
     
     
     public boolean reemplazable(Archivo archivo){
+        if(archivo==null)return true;
         return (!this.equals(archivo) && tsCreacion.compareTo(archivo.getTsCreacion())>=0);        
     }
 

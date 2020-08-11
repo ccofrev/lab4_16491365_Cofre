@@ -12,6 +12,7 @@ package lab3;
  */
 public class Repositorio {
     private String nombre;
+    private Usuario usuario;
     private Workspace workspace;
     private Index index;
     private LocalRepository localRepository;
@@ -20,12 +21,14 @@ public class Repositorio {
     public Repositorio() {
     }
 
-    public Repositorio(String nombre) {
+    public Repositorio(String nombre, Usuario usuario) {
         this.nombre = nombre;
+        this.usuario = usuario;
     }
 
-    public Repositorio(String nombre, Workspace workspace, Index index, LocalRepository localRepository, RemoteRepository remoteRepository) {
+    public Repositorio(String nombre, Usuario usuario, Workspace workspace, Index index, LocalRepository localRepository, RemoteRepository remoteRepository) {
         this.nombre = nombre;
+        this.usuario = usuario;
         this.workspace = workspace;
         this.index = index;
         this.localRepository = localRepository;
@@ -38,6 +41,14 @@ public class Repositorio {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Workspace getWorkspace() {
@@ -71,6 +82,8 @@ public class Repositorio {
     public void setRemoteRepository(RemoteRepository remoteRepository) {
         this.remoteRepository = remoteRepository;
     }
+
+    
         
     
 }
