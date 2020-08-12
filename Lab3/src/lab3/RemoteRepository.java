@@ -12,6 +12,8 @@ import java.util.List;
  */
 public class RemoteRepository extends Directorio{
 
+    CommitContainer commits;
+    
     public RemoteRepository() {
     }
 
@@ -22,6 +24,16 @@ public class RemoteRepository extends Directorio{
     public RemoteRepository(String nombre, List archivos) {
         super(nombre, archivos);
     }
+
+    public CommitContainer getCommits() {
+        return commits;
+    }
+
+    public void setCommits(CommitContainer commits) {
+        this.commits = commits;
+    }
+    
+    
     
     
 }

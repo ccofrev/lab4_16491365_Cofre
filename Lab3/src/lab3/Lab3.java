@@ -57,20 +57,30 @@ public class Lab3 {
         
         //System.out.println(carpeta1.toString());
         
-        Usuario usuario = new Usuario("Carlos Cofré");
+        System.out.println("INICIO\n");
+        
+        Usuario usuario = new Usuario("Carlos Cofré", "carlos.cofre@usach.cl");
+        
+        
+        System.out.println("\nGIT INIT\n");
         Repositorio repo1 = Git.init("Repositorio1", usuario);
         repo1.getWorkspace().addArchivos(Arrays.asList(ar1, ar2, ar3));
+        System.out.println(repo1.toString());
         
+        /*
         System.out.println(repo1.getWorkspace().toString());
         System.out.println(repo1.getLocalRepository().toString());
         System.out.println(repo1.getRemoteRepository().toString());
-        
+        */
         
         //System.out.println(repo1.getWorkspace().getArchivos().get(1).getNombre());
-        Git.add(repo1, Arrays.asList("ar1", "ar6", "ar3"));
-        System.out.println(repo1.getIndex().toString());
+        System.out.println("\nGIT ADD (ar1 ar6)\n");
+        Git.add(repo1, Arrays.asList("ar1", "ar6"));
+        System.out.println(repo1.toString());
         
-        
+        System.out.println("\nGIT COMMIT\n\n");
+        Git.commit(repo1, usuario, "Este es el primer commit");
+        System.out.println(repo1.toString());
         
         
         //System.out.println(StringTools.diferencia2("perrito", "perro"));

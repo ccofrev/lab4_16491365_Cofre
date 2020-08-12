@@ -4,7 +4,10 @@
  */
 package lab3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -13,7 +16,7 @@ import java.util.HashMap;
 public class Index {
     
     //confirmado (committed), modificado (modified), y preparado (staged).
-    final int STAGED = 1, MODIFIED = 2, COMMITED = 3;
+    final static int STAGED = 0, MODIFIED = 1, COMMITED = 2;
     
     private String nombre;
     HashMap<String, Integer> archivos = new HashMap<String, Integer>();
@@ -45,17 +48,25 @@ public class Index {
     }
     
     public void addArchivo(String nombreArchivo){
-        archivos.put(nombreArchivo, STAGED);
+        archivos.put(nombreArchivo, MODIFIED);
+    }
+    
+    public void addArchivo(String nombreArchivo, int estado){
+        archivos.put(nombreArchivo, estado);
     }
 
     @Override
     public String toString() {
-        return "Index{" + "nombre=" + nombre + ", archivos=" + archivos + '}';
+        return "Index{\n" + "\tnombre: " + nombre + "\n\tarchivos: " + archivos + "\n}";
     }
     
-    
-    
-    
-    
+    public List<String> getModified(){
+        List<String> salida = new ArrayList<String>();
+        for (Map.Entry<String, Integer> archivo : archivos.entrySet()) {
+            if(archivo.getValue() == MODIFIED)
+                salida.add(archivo.getKey());
+        }
+        return salida;
+    }
     
 }

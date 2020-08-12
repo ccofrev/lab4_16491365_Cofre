@@ -15,7 +15,7 @@ public class Git {
         Workspace workspace = new Workspace("Workspace");
         Index index = new Index("Index");
         LocalRepository localRepository = new LocalRepository("Local Repository");
-        RemoteRepository remoteRepository = new RemoteRepository("Remote Repository");
+        RemoteRepository remoteRepository = new RemoteRepository("Remote Repository");     
         
         return new Repositorio(nombre, usuario, workspace, index, localRepository, remoteRepository);
     }
@@ -35,6 +35,24 @@ public class Git {
             }
         }
         return repositorio;
+    }
+
+    public static Repositorio commit(Repositorio repositorio, Usuario usuario, String comentario){
+        
+        Index index = repositorio.getIndex();
+        Workspace workspace = repositorio.getWorkspace();
+        LocalRepository localRepository = repositorio.getLocalRepository();
+        
+        List<String> modificadosIndex = index.getModified();
+                    
+        Commit commit = new Commit(usuario, comentario, workspace.getArchivos(modificadosIndex));
+        localRepository.addCommit(commit);
+        System.out.println(index.getModified().toString());
+        repositorio.copiarEntre(index.getModified(), workspace, localRepository);
+        for(int i=0; i<modificadosIndex.size(); i++)
+            index.getArchivos().replace(modificadosIndex.get(i), index.COMMITED);
+        return repositorio;
+        
     }
     
 }

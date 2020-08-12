@@ -6,6 +6,8 @@
  */
 package lab3;
 
+import java.util.List;
+
 /**
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
@@ -83,7 +85,18 @@ public class Repositorio {
         this.remoteRepository = remoteRepository;
     }
 
+    public void copiarEntre(List<String> nArchivos, Directorio zona1, Directorio zona2){
+        for(int i=0; i<nArchivos.size(); i++){
+            zona2.addArchivo( zona1.getArchivo(nArchivos.get(i)) );            
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Repositorio{" + "nombre=" + nombre + ", usuario=" + usuario + ", workspace=" + workspace + ", index=" + index + ", localRepository=" + localRepository + ", remoteRepository=" + remoteRepository + '}';
+    }
     
-        
+    
+           
     
 }
