@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Archivo {
     private String nombre;
@@ -93,8 +93,7 @@ public class Archivo {
             return false;
         }
         return true;
-    }
-    
+    }    
     
     public boolean reemplazable(Archivo archivo){
         if(archivo==null)return true;

@@ -1,6 +1,8 @@
 /*
  * 
- *   * 
+ *  El index difiere de las demas zonas, se trata de un contenedor de nombres de archivos
+ *  y un estado para cada uno. Los estados son  STAGED = 0, MODIFIED = 1, COMMITED = 2;
+ *  STAGED se refiere a loa archivos 
  */
 package lab3;
 
@@ -11,7 +13,7 @@ import java.util.Map;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Index {
     
@@ -48,7 +50,7 @@ public class Index {
     }
     
     public void addArchivo(String nombreArchivo){
-        archivos.put(nombreArchivo, MODIFIED);
+        archivos.put(nombreArchivo, STAGED);
     }
     
     public void addArchivo(String nombreArchivo, int estado){
@@ -57,7 +59,19 @@ public class Index {
 
     @Override
     public String toString() {
-        return "Index{\n" + "\tnombre: " + nombre + "\n\tarchivos: " + archivos + "\n}";
+        return "Index{" + "nombre=" + nombre + ", archivos=" + archivos + '}';
+    }
+    
+    
+
+    
+    public List<String> getModOrStaged(){
+        List<String> salida = new ArrayList<String>();
+        for (Map.Entry<String, Integer> archivo : archivos.entrySet()) {
+            if(archivo.getValue() == MODIFIED || archivo.getValue() == STAGED)
+                salida.add(archivo.getKey());
+        }
+        return salida;
     }
     
     public List<String> getModified(){
@@ -68,5 +82,25 @@ public class Index {
         }
         return salida;
     }
+    
+    public List<String> getStaged(){
+        List<String> salida = new ArrayList<String>();
+        for (Map.Entry<String, Integer> archivo : archivos.entrySet()) {
+            if(archivo.getValue() == STAGED)
+                salida.add(archivo.getKey());
+        }
+        return salida;
+    }
+    
+    public void cambiarEstado(String archivo, int estado){
+        archivos.replace(nombre, estado);
+       
+    }
+    
+    public void cambiarEstado(List<String> nArchivos, int estado){
+        for(int i=0; i<nArchivos.size(); i++)
+            archivos.replace(nArchivos.get(i), estado);
+    }
+    
     
 }

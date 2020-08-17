@@ -6,7 +6,7 @@ package lab3;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Usuario {
     private String nombre;
@@ -41,6 +41,13 @@ public class Usuario {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario: " + nombre + " <" + mail + ">";
+    }
+    
+    
     
     
     

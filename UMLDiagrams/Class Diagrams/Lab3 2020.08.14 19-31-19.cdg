@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Lab3">
+  <ClassDiagramComponents>
+    <Class name="Archivo" package="lab3" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="tsCreacion" type="LocalDateTime" visibility="private"/>
+        <Field name="tsUltimaModificacion" type="LocalDateTime" visibility="private"/>
+        <Field name="contenido" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="contenido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getTsCreacion" returnType="LocalDateTime" visibility="public"/>
+        <Method name="setTsCreacion" returnType="void" visibility="public">
+          <Argument type="LocalDateTime" name="tsCreacion"/>
+        </Method>
+        <Method name="getTsUltimaModificacion" returnType="LocalDateTime" visibility="public"/>
+        <Method name="setTsUltimaModificacion" returnType="void" visibility="public">
+          <Argument type="LocalDateTime" name="tsUltimaModificacion"/>
+        </Method>
+        <Method name="getContenido" returnType="String" visibility="public"/>
+        <Method name="setContenido" returnType="void" visibility="public">
+          <Argument type="String" name="contenido"/>
+        </Method>
+        <Method name="actualizaContenido" returnType="void" visibility="public">
+          <Argument type="String" name="contenido"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="reemplazable" returnType="boolean" visibility="public">
+          <Argument type="Archivo" name="archivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Commit" package="lab3" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+        <Field name="timestamp" type="LocalDateTime" visibility="private"/>
+        <Field name="comentario" type="String" visibility="private"/>
+        <Field name="archivos" type="List&lt;Archivo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="LocalDateTime" name="timestamp"/>
+          <Argument type="String" name="comentario"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="String" name="comentario"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUsuario" returnType="Usuario" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="getTsUltimaModificacion" returnType="LocalDateTime" visibility="public"/>
+        <Method name="setTsUltimaModificacion" returnType="void" visibility="public">
+          <Argument type="LocalDateTime" name="timestamp"/>
+        </Method>
+        <Method name="getComentario" returnType="String" visibility="public"/>
+        <Method name="setComentario" returnType="void" visibility="public">
+          <Argument type="String" name="comentario"/>
+        </Method>
+        <Method name="getArchivos" returnType="List" visibility="public"/>
+        <Method name="setArchivos" returnType="void" visibility="public">
+          <Argument type="List" name="archivos"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CommitContainer" package="lab3" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="commits" type="List&lt;Commit&gt;" visibility="package"/>
+        <Field name="old" type="Directorio" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Commit&gt;" name="commits"/>
+          <Argument type="Directorio" name="old"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCommits" returnType="List&lt;Commit&gt;" visibility="public"/>
+        <Method name="setCommits" returnType="void" visibility="public">
+          <Argument type="List&lt;Commit&gt;" name="commits"/>
+        </Method>
+        <Method name="getOld" returnType="Directorio" visibility="public"/>
+        <Method name="setOld" returnType="void" visibility="public">
+          <Argument type="Directorio" name="old"/>
+        </Method>
+        <Method name="addCommit" returnType="void" visibility="public">
+          <Argument type="Commit" name="commit"/>
+        </Method>
+        <Method name="size" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Directorio" package="lab3" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="archivos" type="List&lt;Archivo&gt;" visibility="private"/>
+        <Field name="subdirectorios" type="List&lt;Directorio&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getArchivos" returnType="List&lt;Archivo&gt;" visibility="public"/>
+        <Method name="setArchivos" returnType="void" visibility="public">
+          <Argument type="List&lt;Archivo&gt;" name="archivos"/>
+        </Method>
+        <Method name="getSubdirectorios" returnType="List&lt;Directorio&gt;" visibility="public"/>
+        <Method name="setSubdirectorios" returnType="void" visibility="public">
+          <Argument type="List&lt;Directorio&gt;" name="subdirectorios"/>
+        </Method>
+        <Method name="addArchivos" returnType="void" visibility="public">
+          <Argument type="List&lt;Archivo&gt;" name="archivos"/>
+        </Method>
+        <Method name="addArchivo" returnType="void" visibility="public">
+          <Argument type="Archivo" name="archivo"/>
+        </Method>
+        <Method name="addSubiderecotorios" returnType="void" visibility="public">
+          <Argument type="List&lt;Directorio&gt;" name="subdirectorios"/>
+        </Method>
+        <Method name="addSubdirectorio" returnType="void" visibility="public">
+          <Argument type="Directorio" name="subdirectorio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getArchivo" returnType="Archivo" visibility="public">
+          <Argument type="String" name="nombreArchivo"/>
+        </Method>
+        <Method name="getArchivos" returnType="List&lt;Archivo&gt;" visibility="public">
+          <Argument type="List&lt;String&gt;" name="nombresArchivos"/>
+        </Method>
+        <Method name="contains" returnType="boolean" visibility="public">
+          <Argument type="String" name="nombreArchivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Git" package="lab3" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="init" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="add" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+          <Argument type="List&lt;String&gt;" name="nombresArchivos"/>
+        </Method>
+        <Method name="add" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+          <Argument type="String" name="nArchivo"/>
+        </Method>
+        <Method name="commit" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="String" name="comentario"/>
+        </Method>
+        <Method name="push" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+        </Method>
+        <Method name="pull" returnType="Repositorio" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+        </Method>
+        <Method name="status" returnType="String" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+        </Method>
+        <Method name="log" returnType="String" visibility="public" isStatic="true">
+          <Argument type="Repositorio" name="repositorio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Index" package="lab3" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="STAGED" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="archivos" type="HashMap&lt;String, Integer&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getArchivos" returnType="HashMap&lt;String, Integer&gt;" visibility="public"/>
+        <Method name="setArchivos" returnType="void" visibility="public">
+          <Argument type="HashMap&lt;String, Integer&gt;" name="archivos"/>
+        </Method>
+        <Method name="addArchivo" returnType="void" visibility="public">
+          <Argument type="String" name="nombreArchivo"/>
+        </Method>
+        <Method name="addArchivo" returnType="void" visibility="public">
+          <Argument type="String" name="nombreArchivo"/>
+          <Argument type="int" name="estado"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getModOrStaged" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="getModified" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="getStaged" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="cambiarEstado" returnType="void" visibility="public">
+          <Argument type="String" name="archivo"/>
+          <Argument type="int" name="estado"/>
+        </Method>
+        <Method name="cambiarEstado" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="nArchivos"/>
+          <Argument type="int" name="estado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lab3" package="lab3" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LocalRepository" package="lab3" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="commits" type="CommitContainer" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCommits" returnType="CommitContainer" visibility="public"/>
+        <Method name="setCommits" returnType="void" visibility="public">
+          <Argument type="CommitContainer" name="commits"/>
+        </Method>
+        <Method name="addCommit" returnType="void" visibility="public">
+          <Argument type="Commit" name="commit"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoteRepository" package="lab3" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="commits" type="CommitContainer" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCommits" returnType="CommitContainer" visibility="public"/>
+        <Method name="setCommits" returnType="void" visibility="public">
+          <Argument type="CommitContainer" name="commits"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Repositorio" package="lab3" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+        <Field name="workspace" type="Workspace" visibility="private"/>
+        <Field name="index" type="Index" visibility="private"/>
+        <Field name="localRepository" type="LocalRepository" visibility="private"/>
+        <Field name="remoteRepository" type="RemoteRepository" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="Workspace" name="workspace"/>
+          <Argument type="Index" name="index"/>
+          <Argument type="LocalRepository" name="localRepository"/>
+          <Argument type="RemoteRepository" name="remoteRepository"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getUsuario" returnType="Usuario" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="getWorkspace" returnType="Workspace" visibility="public"/>
+        <Method name="setWorkspace" returnType="void" visibility="public">
+          <Argument type="Workspace" name="workspace"/>
+        </Method>
+        <Method name="getIndex" returnType="Index" visibility="public"/>
+        <Method name="setIndex" returnType="void" visibility="public">
+          <Argument type="Index" name="index"/>
+        </Method>
+        <Method name="getLocalRepository" returnType="LocalRepository" visibility="public"/>
+        <Method name="setLocalRepository" returnType="void" visibility="public">
+          <Argument type="LocalRepository" name="localRepository"/>
+        </Method>
+        <Method name="getRemoteRepository" returnType="RemoteRepository" visibility="public"/>
+        <Method name="setRemoteRepository" returnType="void" visibility="public">
+          <Argument type="RemoteRepository" name="remoteRepository"/>
+        </Method>
+        <Method name="copiarEntre" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="nArchivos"/>
+          <Argument type="Directorio" name="zona1"/>
+          <Argument type="Directorio" name="zona2"/>
+        </Method>
+        <Method name="copiarEntre" returnType="void" visibility="public">
+          <Argument type="String" name="nombreArchivo"/>
+          <Argument type="Directorio" name="zona1"/>
+          <Argument type="Directorio" name="zona2"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StringTools" package="lab3" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="NCHARS" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="mayor" returnType="String" visibility="package" isStatic="true">
+          <Argument type="String" name="a"/>
+          <Argument type="String" name="b"/>
+        </Method>
+        <Method name="compara" returnType="String" visibility="package" isStatic="true">
+          <Argument type="String" name="a"/>
+          <Argument type="String" name="b"/>
+        </Method>
+        <Method name="freqs" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="s"/>
+          <Argument type="int[]" name="TFreq"/>
+        </Method>
+        <Method name="diferencia" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="a"/>
+          <Argument type="String" name="b"/>
+        </Method>
+        <Method name="diferencia2" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="a"/>
+          <Argument type="String" name="b"/>
+        </Method>
+        <Method name="interseccion" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="a"/>
+          <Argument type="String" name="b"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="lab3" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="mail" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="mail"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getMail" returnType="String" visibility="public"/>
+        <Method name="setMail" returnType="void" visibility="public">
+          <Argument type="String" name="mail"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Workspace" package="lab3" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="List" name="archivos"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="index" source="lab3.Repositorio" target="lab3.Index" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lab3.RemoteRepository" target="lab3.Directorio"/>
+    <UseRelation source="lab3.Git" target="lab3.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="localRepository" source="lab3.Repositorio" target="lab3.LocalRepository" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lab3.Workspace" target="lab3.Directorio"/>
+    <HasRelation name="old" source="lab3.CommitContainer" target="lab3.Directorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="lab3.Repositorio" target="lab3.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Archivo" target="lab3.Archivo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.LocalRepository" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.LocalRepository" target="lab3.CommitContainer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivos" source="lab3.Commit" target="lab3.Archivo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Archivo&gt;"/>
+    <UseRelation source="lab3.Commit" target="lab3.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Directorio" target="lab3.Archivo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Git" target="lab3.Repositorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.CommitContainer" target="lab3.Commit" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="subdirectorios" source="lab3.Directorio" target="lab3.Directorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Directorio&gt;"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lab3.LocalRepository" target="lab3.Directorio"/>
+    <HasRelation name="usuario" source="lab3.Commit" target="lab3.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.Index" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="commits" source="lab3.CommitContainer" target="lab3.Commit" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Commit&gt;"/>
+    <UseRelation source="lab3.LocalRepository" target="lab3.Commit" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="remoteRepository" source="lab3.Repositorio" target="lab3.RemoteRepository" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.RemoteRepository" target="lab3.CommitContainer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="archivos" source="lab3.Directorio" target="lab3.Archivo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Archivo&gt;"/>
+    <HasRelation name="commits" source="lab3.LocalRepository" target="lab3.CommitContainer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.CommitContainer" target="lab3.Directorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.Directorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.RemoteRepository" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="workspace" source="lab3.Repositorio" target="lab3.Workspace" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Repositorio" target="lab3.Workspace" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="commits" source="lab3.RemoteRepository" target="lab3.CommitContainer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab3.Directorio" target="lab3.Directorio" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

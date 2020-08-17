@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Directorio {
     
@@ -74,8 +74,6 @@ public class Directorio {
     public void addSubdirectorio(Directorio subdirectorio){
         (this.subdirectorios).add(subdirectorio);
     }
-       
-    
 
     @Override
     public String toString() {
@@ -105,7 +103,7 @@ public class Directorio {
         return salida;
     }
     
-    public boolean isIn(String nombreArchivo){
+    public boolean contains(String nombreArchivo){
         for(int i=0; i < archivos.size(); i++) {
             String s = archivos.get(i).getNombre();
             if(nombreArchivo.equals(s)) {

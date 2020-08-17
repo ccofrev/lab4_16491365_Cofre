@@ -6,10 +6,10 @@ package lab3;
 
 /**
  *
- * @author Carlos Cofre <carlos.cofre@usach.cl>
+ * @author Carlos Cofré <carlos.cofre@usach.cl>
  */
-public class StringTools {
-    
+public class Utils {
+
     static String mayor(String a, String b){   
         int la;
         if(Math.max(la=a.length(), b.length()) == la)
@@ -90,4 +90,10 @@ public class StringTools {
                             r += ((char)i+"");
             return r;
     }
+    
+    public static void falsoClear(){
+        for(int i=0; i<10; i++)
+            System.out.println("\n\n\n\n\n\n\n\n\n");
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Repositorio {
     private String nombre;
@@ -89,6 +89,10 @@ public class Repositorio {
         for(int i=0; i<nArchivos.size(); i++){
             zona2.addArchivo( zona1.getArchivo(nArchivos.get(i)) );            
         }
+    }
+   
+    public void copiarEntre(String nombreArchivo, Directorio zona1, Directorio zona2){
+            zona2.addArchivo( zona1.getArchivo(nombreArchivo) );            
     }
 
     @Override

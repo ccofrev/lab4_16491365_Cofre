@@ -10,27 +10,27 @@ import java.util.Objects;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Commit {
     private Usuario usuario;
-    private LocalDateTime tsUltimaModificacion;
+    private LocalDateTime timestamp;
     private String comentario;
     private List<Archivo> archivos;
 
     public Commit() {
     }
 
-    public Commit(Usuario usuario, LocalDateTime tsUltimaModificacion, String comentario, List archivos) {
+    public Commit(Usuario usuario, LocalDateTime timestamp, String comentario, List archivos) {
         this.usuario = usuario;
-        this.tsUltimaModificacion = tsUltimaModificacion;
+        this.timestamp = timestamp;
         this.comentario = comentario;
         this.archivos = archivos;
     }
     
     public Commit(Usuario usuario, String comentario, List archivos) {
         this.usuario = usuario;
-        this.tsUltimaModificacion = LocalDateTime.now();;
+        this.timestamp = LocalDateTime.now();
         this.comentario = comentario;
         this.archivos = archivos;
     }
@@ -44,11 +44,11 @@ public class Commit {
     }
 
     public LocalDateTime getTsUltimaModificacion() {
-        return tsUltimaModificacion;
+        return timestamp;
     }
 
-    public void setTsUltimaModificacion(LocalDateTime tsUltimaModificacion) {
-        this.tsUltimaModificacion = tsUltimaModificacion;
+    public void setTsUltimaModificacion(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getComentario() {
@@ -70,10 +70,16 @@ public class Commit {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.tsUltimaModificacion);
+        hash = 41 * hash + Objects.hashCode(this.timestamp);
         return hash;
     }
 
+    @Override
+    public String toString() {
+        return "Commit{\n\t" + usuario + ",\n\ttimestamp: " + timestamp + ",\n\tcomentario: " + comentario + ",\n\tarchivos: " + archivos + "\n}";
+    }
+
+    
     
     
     

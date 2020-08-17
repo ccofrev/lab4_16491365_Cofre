@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class LocalRepository extends Directorio{
 
@@ -39,6 +39,10 @@ public class LocalRepository extends Directorio{
     public void addCommit(Commit commit){
         if(commit == null) return;
         this.commits.addCommit(commit);
+    }
+    
+    public Commit getLastCommit(){
+        return commits.getCommits().get(commits.size() - 1);
     }
       
 }

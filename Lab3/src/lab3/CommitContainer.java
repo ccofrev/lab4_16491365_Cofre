@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class CommitContainer {
     List<Commit> commits;
@@ -42,6 +42,10 @@ public class CommitContainer {
     
     public void addCommit(Commit commit){
         commits.add(commit);
+    }
+    
+    public int size(){
+        return commits.size();
     }
     
 }
