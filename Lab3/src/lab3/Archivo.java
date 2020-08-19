@@ -1,6 +1,8 @@
 /*
- * 
- *   
+ * Clase que emula un archivo de texto plano.
+ * Se consideran propiedades como el nombre, una etiqueta de tiempo para la creacion
+ * del archivo, y una para la ultima modificacion. 
+ * eso ademas de un texto que representa el contenido del mismo.
  */
 package lab3;
 import java.time.LocalDateTime; 

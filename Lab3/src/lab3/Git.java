@@ -1,6 +1,7 @@
 /*
+ * En esta clase se implementan de modo estatico las funciones 
+ * basicas de GIT (requisitos funcionales y extras).
  * 
- *   * 
  */
 package lab3;
 
@@ -12,9 +13,11 @@ import java.util.List;
  * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Git {
+    
     public static Repositorio init(String nombre, Usuario usuario){
         Workspace workspace = new Workspace("Workspace");
-        Index index = new Index("Index");
+        //Index index = new Index("Index");
+        Index index = new Index();
         LocalRepository localRepository = new LocalRepository("Local Repository");
         RemoteRepository remoteRepository = new RemoteRepository("Remote Repository");     
         
@@ -30,15 +33,14 @@ public class Git {
             if(workspace.contains(nombreArchivo)){      // se revisa si el archivo solicitado esta en ws
                 if(localRepository.contains(nombreArchivo)){    // se revisa si esta en lr
                     if(localRepository.getArchivo(nombreArchivo).reemplazable(workspace.getArchivo(nombreArchivo))){
-                        index.cambiarEstado(nombreArchivo, index.MODIFIED);
+                        index.cambiarEstado(nombreArchivo, Index.MODIFIED);
                     }
                     
                 }else{
-                    index.addArchivo(nombreArchivo, index.STAGED);
+                    index.addArchivo(nombreArchivo, Index.STAGED);
                 }
             }
         }
-
         return repositorio;
     }
     
@@ -59,7 +61,7 @@ public class Git {
         Commit commit = new Commit(usuario, comentario, workspace.getArchivos(modificadosIndex));
         localRepository.addCommit(commit);
         repositorio.copiarEntre(modificadosIndex, workspace, localRepository);
-        index.cambiarEstado(modificadosIndex, index.COMMITED);       
+        index.cambiarEstado(modificadosIndex, Index.COMMITED);       
         
         return repositorio;
     }
@@ -110,7 +112,6 @@ public class Git {
         salida += "Archivos no actualizados: " + modSinAdd + '\n';
         salida += index.getModified().toString()=="[]"?"": "\tModified: "+index.getModified().toString() + '\n';
         salida += index.getStaged().toString()=="[]"?"": "\tNuevo archivo: "+index.getStaged().toString() + '\n';
-        
         
         return salida;
     }

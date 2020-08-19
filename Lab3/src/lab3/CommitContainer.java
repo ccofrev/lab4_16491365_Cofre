@@ -1,6 +1,9 @@
 /*
- * 
- *   * 
+ * Se considera esta clase especial para almacenar commit y mantenerlos ordenados 
+ * dentro de las zonas de trabajo donde se cargan los efectos de un commit.
+ * se compone de una lista con commits.
+ * Un elemento de esta clase es lo que hace la diferencia entre un directorio normal
+ * y una zona de tipo repositorio.
  */
 package lab3;
 
@@ -13,15 +16,9 @@ import java.util.List;
  */
 public class CommitContainer {
     List<Commit> commits;
-    Directorio old;
 
     public CommitContainer() {
         commits = new ArrayList<Commit>();
-    }
-
-    public CommitContainer(List<Commit> commits, Directorio old) {
-        this.commits = commits;
-        this.old = old;
     }
 
     public List<Commit> getCommits() {
@@ -30,14 +27,6 @@ public class CommitContainer {
 
     public void setCommits(List<Commit> commits) {
         this.commits = commits;
-    }
-
-    public Directorio getOld() {
-        return old;
-    }
-
-    public void setOld(Directorio old) {
-        this.old = old;
     }
     
     public void addCommit(Commit commit){

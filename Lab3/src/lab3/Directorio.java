@@ -1,6 +1,9 @@
 /*
+ * Se modela un directorio (carpeta) para un sistema de archivos ficticio.
+ * Basicamente se compone de un nombre, y de listas de archivos (y subdirectorios).
+ * Clase padre de zonas que se consideran  contenedores de archivos 
+ * (Workspace, LocalRepository, RemoteRepository).
  * 
- *   * 
  */
 package lab3;
 

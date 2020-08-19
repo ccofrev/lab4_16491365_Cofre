@@ -1,6 +1,8 @@
 /*
- * 
- *   * 
+ * Clase usuario maneja datos basicos de identificacion de un usuario
+ * para este caso solo su nombre y correo electronico
+ * esta entidad es necesaria para las funciones de Git que requieren de identificacion
+ * de usuario como el Init y el Commit
  */
 package lab3;
 

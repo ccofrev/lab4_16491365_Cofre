@@ -1,6 +1,6 @@
 /*
+ * Herramientas para manejo de strings y otras
  * 
- *   * 
  */
 package lab3;
 

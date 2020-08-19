@@ -1,6 +1,8 @@
 /*
- * 
- *   * 
+ * Clase commit, almacena los archivos involucrados en un cambio desde 
+ * el workspace hacia el local repository.
+ * Almacena un comentario, un comentario y un usuario ademas de una lista de 
+ * archivos.
  */
 package lab3;
 

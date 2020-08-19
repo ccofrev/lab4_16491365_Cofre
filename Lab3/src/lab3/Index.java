@@ -1,8 +1,12 @@
 /*
- * 
  *  El index difiere de las demas zonas, se trata de un contenedor de nombres de archivos
  *  y un estado para cada uno. Los estados son  STAGED = 0, MODIFIED = 1, COMMITED = 2;
  *  STAGED se refiere a loa archivos 
+ *  Tal como su nombre lo indica, es un Indice.
+ *  se considera para estos fines como un archivo que mantiene un registro de los archivos
+ *  cargados a traves de add, que sean elegibles (que hayan sufrido modificaciones o sean nuevos).
+ *  asignandoles un estado STAGED para los archivos recien cargados, MODIFIED para los modificados
+ *  y COMMITED para los que ya se han cargado al local repository a traves de un commit.
  */
 package lab3;
 
@@ -20,13 +24,13 @@ public class Index {
     //confirmado (committed), modificado (modified), y preparado (staged).
     final static int STAGED = 0, MODIFIED = 1, COMMITED = 2;
     
-    private String nombre;
+    //private String nombre;
     HashMap<String, Integer> archivos = new HashMap<String, Integer>();
 
     
     public Index() {
     }
-    
+    /*
     public Index(String nombre) {
         this.nombre = nombre;
     }
@@ -38,7 +42,7 @@ public class Index {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
+    }*/
 
 
     public HashMap<String, Integer> getArchivos() {
@@ -59,7 +63,7 @@ public class Index {
 
     @Override
     public String toString() {
-        return "Index{" + "nombre=" + nombre + ", archivos=" + archivos + '}';
+        return "Index{ archivos=" + archivos + '}';
     }
     
     
@@ -93,7 +97,7 @@ public class Index {
     }
     
     public void cambiarEstado(String archivo, int estado){
-        archivos.replace(nombre, estado);
+        archivos.replace(archivo, estado);
        
     }
     
