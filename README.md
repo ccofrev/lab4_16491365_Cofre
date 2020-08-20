@@ -7,6 +7,13 @@ java lab3.Lab3
 desde el directorio desde donde se compiló.
 El programa considera un menú de opciones donde se pueden probar las diferentes implementaciones, según enunciado.
 
+--- esto es lo único añadido fuera de plazo --- 
+Favor considerar corrección en comandos para compilar y ejecutar
+para compilar:
+javac -cp . lab3/Lab3.java
+para ejecutar
+java -cp . lab3/Lab3
+Todo desde el nivel superior a los archivos .java 
 
 repositorio del proyecto
 https://github.com/ccofrev/lab3_16491365_Cofre
