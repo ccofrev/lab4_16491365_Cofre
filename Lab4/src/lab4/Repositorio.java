@@ -4,7 +4,7 @@
  * no confundir con local y remote repository, que apuntan a esas zonas en particular
  * 
  */
-package lab3;
+package lab4;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@
  * Herramientas para manejo de strings y otras
  * 
  */
-package lab3;
+package lab4;
 
 /**
  *

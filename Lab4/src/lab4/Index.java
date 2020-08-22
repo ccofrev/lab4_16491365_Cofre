@@ -8,7 +8,7 @@
  *  asignandoles un estado STAGED para los archivos recien cargados, MODIFIED para los modificados
  *  y COMMITED para los que ya se han cargado al local repository a traves de un commit.
  */
-package lab3;
+package lab4;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -3,7 +3,7 @@
  * 
  * 
  */
-package lab3;
+package lab4;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author ccofr
  */
-public class Lab3 {
+public class Lab4 {
 
     /**
      * @param args the command line arguments

@@ -3,7 +3,7 @@
  * basicas de GIT (requisitos funcionales y extras).
  * 
  */
-package lab3;
+package lab4;
 
 import java.util.Arrays;
 import java.util.List;

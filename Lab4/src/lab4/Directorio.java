@@ -5,7 +5,7 @@
  * (Workspace, LocalRepository, RemoteRepository).
  * 
  */
-package lab3;
+package lab4;
 
 import java.util.ArrayList;
 import java.util.List;

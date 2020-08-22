@@ -4,7 +4,7 @@
  * del archivo, y una para la ultima modificacion. 
  * eso ademas de un texto que representa el contenido del mismo.
  */
-package lab3;
+package lab4;
 import java.time.LocalDateTime; 
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;

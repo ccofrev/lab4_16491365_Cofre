@@ -7,7 +7,7 @@
  * un comentario y timestamp
  * 
  */
-package lab3;
+package lab4;
 
 import java.util.List;
 
