@@ -4,6 +4,8 @@
  */
 package lab4;
 
+
+
 /**
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
@@ -95,5 +97,9 @@ public class Utils {
         for(int i=0; i<10; i++)
             System.out.println("\n\n\n\n\n\n\n\n\n");
     }
+    
+    
+    
+    
 
 }

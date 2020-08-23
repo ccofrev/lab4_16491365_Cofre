@@ -40,6 +40,7 @@ public class Lab4 {
         String nombreRepositorio = "@desconocido";
         Usuario usuario = new Usuario(nombreUsuario, mailUsuario); //default
         Repositorio repositorio = Git.init(nombreRepositorio, usuario);  // default1
+        
         Utils.falsoClear();
         
         while(!salir)
