@@ -7,12 +7,15 @@ package lab4;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author Carlos Cofre <carlos.cofre@usach.cl>
  */
 public class Git {
+    
+    final static int WORKSPACE = 1, INDEX = 2, LOCALREPO = 3, REMOTEREPO = 4;
     
     public static Repositorio init(String nombre, Usuario usuario){
         Workspace workspace = new Workspace("Workspace");
@@ -116,23 +119,68 @@ public class Git {
         return salida;
     }
     
-    public static String status(Repositorio repositorio, String nombreZona){
+    
+    //// version por zona para lab4
+    public static String status(Repositorio repositorio, int zona){
         Workspace workspace = repositorio.getWorkspace();
         Index index = repositorio.getIndex();
         LocalRepository localRepository = repositorio.getLocalRepository();
+        RemoteRepository remoteRepository = repositorio.getRemoteRepository();
         
         String nombre = repositorio.getNombre();
         String autor = repositorio.getUsuario().getNombre();
         int numArchivosWS = workspace.getArchivos().size();
         int numArchivosIn = index.getArchivos().size();
         int numArchivosLR = localRepository.getArchivos().size();
+        int numArchivosRR = remoteRepository.getArchivos().size();
         int numCommitsLR = localRepository.getCommits().size();
+        int numCommitsRR = remoteRepository.getCommits().size();
         int modSinAdd = index.getModOrStaged().size();
         
-        String salida = "Repositorio: " + nombre + '\n';
-        salida += "Autor: " + autor + '\n';
-        salida += "Archivos en Workspace: " + numArchivosWS + '\n';
-        salida += "Archivos en Index: " + numArchivosIn + '\n';
+        String salida = "";
+        
+        switch(zona){
+            case WORKSPACE:
+                salida = "Archivos en Workspace: " + numArchivosWS + '\n';
+                for(Archivo arch: workspace.getArchivos()){
+                    salida += "-" + arch.getNombre() + "\n";
+                }
+                break;
+                
+            case INDEX:
+                String[] stText = {"STAGED", "MODIFIED", "COMMITED"};
+                Object[] keys = index.getArchivos().keySet().toArray();
+                salida = "Archivos en Index: " + numArchivosIn + '\n';
+                for(int i=0; i<keys.length; i++){
+                    salida += "-" + keys[i] + " " + stText[index.getArchivos().get(keys[i])] + "\n";
+                }
+                break;
+                
+            case LOCALREPO:
+                salida = "Archivos: " + numArchivosLR + "\n";
+                for(Archivo arch: localRepository.getArchivos()){
+                    salida += "-" + arch.getNombre() + "\n";
+                }
+                salida += "\nCommits: " + numCommitsLR + "\n";
+                CommitContainer commsLR = localRepository.getCommits();
+                for(Commit comm: commsLR.getCommits()){
+                    salida += "-" + comm.toString() + "\n";
+                }
+                break;
+                
+            case REMOTEREPO:
+                salida = "Archivos: " + numArchivosRR + "\n";
+                for(Archivo arch: remoteRepository.getArchivos()){
+                    salida += "-" + arch.getNombre() + "\n";
+                }
+                salida += "\nCommits: " + numCommitsRR + "\n";
+                CommitContainer commsRR = remoteRepository.getCommits();
+                for(Commit comm: commsRR.getCommits()){
+                    salida += "-" + comm.toString() + "\n";
+                }
+                break;
+            
+        }
         
         return salida;
     }

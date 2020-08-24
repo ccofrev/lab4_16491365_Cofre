@@ -3,8 +3,10 @@
  *   * 
  */
 package lab4;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
+
 /**
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
@@ -69,9 +71,13 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane7 = new javax.swing.JLayeredPane();
         jPanel3 = new javax.swing.JPanel();
         labelSeleccion = new javax.swing.JLabel();
+        labelTitleStatus = new javax.swing.JLabel();
         editPanel = new javax.swing.JLayeredPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         textAreaPrincipal = new javax.swing.JTextArea();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        labelSubtitulo = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuNuevoUsuario = new javax.swing.JMenuItem();
@@ -169,7 +175,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 .addComponent(btnStatus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLog)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLayeredPane4.setBackground(new java.awt.Color(0, 204, 51));
@@ -415,20 +421,30 @@ public class Lab4_Frame extends javax.swing.JFrame {
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png"))); // NOI18N
         labelSeleccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        labelTitleStatus.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labelTitleStatus.setText("GIT");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                .addGap(200, 200, 200))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(labelTitleStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(200, 200, 200))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(labelTitleStatus)
+                .addGap(52, 52, 52)
+                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -438,15 +454,19 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane7.setLayout(jLayeredPane7Layout);
         jLayeredPane7Layout.setHorizontalGroup(
             jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 330, Short.MAX_VALUE)
             .addGroup(jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jLayeredPane7Layout.createSequentialGroup()
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jLayeredPane7Layout.setVerticalGroup(
             jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 246, Short.MAX_VALUE)
+            .addGap(0, 294, Short.MAX_VALUE)
             .addGroup(jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane7Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         editPanel.setToolTipText("");
@@ -456,17 +476,46 @@ public class Lab4_Frame extends javax.swing.JFrame {
         textAreaPrincipal.setEnabled(false);
         jScrollPane3.setViewportView(textAreaPrincipal);
 
+        labelSubtitulo.setText("GIT");
+
+        jLayeredPane3.setLayer(labelSubtitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(jSeparator4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
+        jLayeredPane3.setLayout(jLayeredPane3Layout);
+        jLayeredPane3Layout.setHorizontalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4)
+                .addContainerGap())
+        );
+        jLayeredPane3Layout.setVerticalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator4))
+        );
+
         editPanel.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        editPanel.setLayer(jLayeredPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+            .addComponent(jLayeredPane3)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editPanelLayout.createSequentialGroup()
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLayeredPane4.setLayer(jLayeredPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -488,8 +537,8 @@ public class Lab4_Frame extends javax.swing.JFrame {
                         .addComponent(jLayeredPane5))
                     .addComponent(jLayeredPane6)
                     .addGroup(jLayeredPane4Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLayeredPane7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
@@ -586,27 +635,52 @@ public class Lab4_Frame extends javax.swing.JFrame {
     //// BOTONES
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        String archivos = JOptionPane.showInputDialog("Ingrese archivo(s) para agregar");
+        
+
+        if(archivos.contains(" ") && archivos.split(" ").length>1){
+            Git.add(repositorio, Arrays.asList(archivos.split(" ")));
+        }else{
+            Git.add(repositorio, archivos);
+        }
+        
+        updateCount();
+        System.out.println("Archivos elegibles agregados a index!");
+        
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
         // TODO add your handling code here:
+        String comentario = JOptionPane.showInputDialog("Ingrese comentario para commit");
+        Git.commit(repositorio, usuario, comentario);
+
+        updateCount();
+        System.out.println(repositorio.getLocalRepository().getLastCommit().toString());
+        System.out.println("Commit realizado!" );
     }//GEN-LAST:event_btnCommitActionPerformed
 
     private void btnPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPushActionPerformed
         // TODO add your handling code here:
+        Git.push(repositorio);
+        updateCount();
     }//GEN-LAST:event_btnPushActionPerformed
 
     private void btnPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPullActionPerformed
         // TODO add your handling code here:
+        Git.pull(repositorio);
+        updateCount();
     }//GEN-LAST:event_btnPullActionPerformed
 
     private void btnStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatusActionPerformed
         // TODO add your handling code here:
         
         // INTERFAZ
-        textAreaPrincipal.setEnabled(false);
+        //textAreaPrincipal.setEnabled(false);
+        textAreaPrincipal.setEditable(false);
         btnGuardar.setEnabled(false);
         btnLimpiar.setEnabled(false);
+        
         estadoAreaTexto = GITMONITOREO;
         // GIT
         
@@ -616,7 +690,8 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private void btnLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogActionPerformed
         // TODO add your handling code here:
         // INTERFAZ
-        textAreaPrincipal.setEnabled(false);
+        //textAreaPrincipal.setEnabled(false);
+        textAreaPrincipal.setEditable(false);
         btnGuardar.setEnabled(false);
         btnLimpiar.setEnabled(false);
         estadoAreaTexto = GITMONITOREO;
@@ -633,7 +708,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         repositorio = Git.init(nombreRepositorio, usuario);
         menuNuevoRepo.setEnabled(false);
         menuNuevoArchivo.setEnabled(true);
-        labelInfo.setText(nombreRepositorio + "   " + usuario.toString());
+        labelInfo.setText("Repositorio: " + nombreRepositorio + "   " + usuario.toString());
         System.out.println("Nuevo repositorio creado!");
         System.out.println(repositorio.toString());
         
@@ -672,8 +747,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         nombreNuevoArchivo = JOptionPane.showInputDialog("Ingrese un nombre para el nuevo archivo");
 	JOptionPane.showMessageDialog(null, "Se abrira la edicion del nuevo archivo: " + nombreNuevoArchivo);
         
-        //labelSubtitulo.setText("Edicion - " + nombreNuevoArchivo);
-        //editPanel.setTitle("Edicion - " + nombreNuevoArchivo);
+        labelSubtitulo.setText("Edicion - " + nombreNuevoArchivo);
         
         tituloBorde = "Edicion - " + nombreNuevoArchivo;
         bordeEditPanel.setBorder(bordeEditPanel);
@@ -681,6 +755,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         
         archivo = new Archivo(nombreNuevoArchivo);
         textAreaPrincipal.setEnabled(true);
+        textAreaPrincipal.setEditable(true);
         btnGuardar.setEnabled(true);
         btnLimpiar.setEnabled(true);
         estadoAreaTexto = NUEVOEDIT;
@@ -703,7 +778,12 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 archivo.setContenido(textAreaPrincipal.getText());
                 btnGuardar.setEnabled(false);
                 btnLimpiar.setEnabled(false);
-                textAreaPrincipal.setEnabled(false);
+                
+                textAreaPrincipal.setText("");
+                //textAreaPrincipal.setEnabled(false);
+                textAreaPrincipal.setEditable(false);
+                labelSubtitulo.setText("Guardado!");
+                
                 System.out.println("Archivo creado: ");
                 repositorio.getWorkspace().addArchivo(archivo);
                 System.out.println("Archivo cargado al workspace");
@@ -716,32 +796,57 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
     private void statusWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusWorkspaceActionPerformed
         
-        tituloBorde = "workspace";
-        editPanel.setBorder(bordeEditPanel);
-        
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/workspace.png")));
+        labelSubtitulo.setText("Workspace");
+        labelTitleStatus.setText("Workspace");
+        String statusWS = Git.status(repositorio, Git.WORKSPACE);
+        textAreaPrincipal.setText(statusWS);
+        updateCount();
+
     
     }//GEN-LAST:event_statusWorkspaceActionPerformed
 
     private void statusIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusIndexActionPerformed
         // TODO add your handling code here:
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/index.png")));
+        labelSubtitulo.setText("Index");
+        labelTitleStatus.setText("Index");
+        String statusIN = Git.status(repositorio, Git.INDEX);
+        textAreaPrincipal.setText(statusIN);
+        updateCount();
     }//GEN-LAST:event_statusIndexActionPerformed
 
     private void statusLocalRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusLocalRepoActionPerformed
         // TODO add your handling code here:
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/localrepo.png")));
+        labelSubtitulo.setText("Local Repository");
+        labelTitleStatus.setText("Local Repository");
+        String statusLR = Git.status(repositorio, Git.LOCALREPO);
+        textAreaPrincipal.setText(statusLR);
+        updateCount();
     }//GEN-LAST:event_statusLocalRepoActionPerformed
 
     private void statusRemoteRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusRemoteRepoActionPerformed
         // TODO add your handling code here:
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/remoterepo.png")));
+        labelSubtitulo.setText("Remote Repository");
+        labelTitleStatus.setText("Remote Repository");
+        String statusRR = Git.status(repositorio, Git.REMOTEREPO);
+        textAreaPrincipal.setText(statusRR);
+        updateCount();
     }//GEN-LAST:event_statusRemoteRepoActionPerformed
 
     private void updateCount(){
         labelWorkspace.setText(convertToMultiline("Archivos: " + repositorio.getWorkspace().getArchivos().size()));
+        
         labelIndex.setText(convertToMultiline("\n\nArchivos: " + repositorio.getIndex().getArchivos().size() + 
                                                 "\n-Staged: " + repositorio.getIndex().getStaged().size() +
                                                 "\n-Modified: " + repositorio.getIndex().getModified().size() +
                                                 "\n-Commited: " + repositorio.getIndex().getCommited().size() ));
+        
         labelLocalRepo.setText(convertToMultiline("Archivos: " + repositorio.getLocalRepository().getArchivos().size() + 
                                                   "\nCommits: " + repositorio.getLocalRepository().getCommits().size() ));
+        
         labelRemoteRepo.setText(convertToMultiline("Archivos: " + repositorio.getRemoteRepository().getArchivos().size() +
                                                   "\nCommits: " + repositorio.getRemoteRepository().getCommits().size() ));
         
@@ -806,7 +911,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
     final static int DEFAULT = 0, NUEVOEDIT = 1, GITMONITOREO = 2;
     int estadoAreaTexto = DEFAULT;
     
-    final static int WORKSPACE = 1, INDEX = 2, LOCALREPO = 3, REMOTEREPO = 4;
+    
         
     Archivo archivo;
     String nombreUsuario = "@desconocido";
@@ -834,6 +939,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JLayeredPane jLayeredPane4;
     private javax.swing.JLayeredPane jLayeredPane5;
     private javax.swing.JLayeredPane jLayeredPane6;
@@ -851,12 +957,15 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelIndex;
     private javax.swing.JLabel labelInfo;
     private javax.swing.JLabel labelLocalRepo;
     private javax.swing.JLabel labelRemoteRepo;
     private javax.swing.JLabel labelSeleccion;
+    private javax.swing.JLabel labelSubtitulo;
+    private javax.swing.JLabel labelTitleStatus;
     private javax.swing.JLabel labelWorkspace;
     private javax.swing.JMenuItem menuNuevoArchivo;
     private javax.swing.JMenuItem menuNuevoRepo;
