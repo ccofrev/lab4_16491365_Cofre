@@ -96,6 +96,15 @@ public class Index {
         return salida;
     }
     
+    public List<String> getCommited(){
+        List<String> salida = new ArrayList<String>();
+        for (Map.Entry<String, Integer> archivo : archivos.entrySet()) {
+            if(archivo.getValue() == COMMITED)
+                salida.add(archivo.getKey());
+        }
+        return salida;
+    }
+    
     public void cambiarEstado(String archivo, int estado){
         archivos.replace(archivo, estado);
        

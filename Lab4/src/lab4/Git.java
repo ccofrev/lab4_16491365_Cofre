@@ -115,6 +115,27 @@ public class Git {
         
         return salida;
     }
+    
+    public static String status(Repositorio repositorio, String nombreZona){
+        Workspace workspace = repositorio.getWorkspace();
+        Index index = repositorio.getIndex();
+        LocalRepository localRepository = repositorio.getLocalRepository();
+        
+        String nombre = repositorio.getNombre();
+        String autor = repositorio.getUsuario().getNombre();
+        int numArchivosWS = workspace.getArchivos().size();
+        int numArchivosIn = index.getArchivos().size();
+        int numArchivosLR = localRepository.getArchivos().size();
+        int numCommitsLR = localRepository.getCommits().size();
+        int modSinAdd = index.getModOrStaged().size();
+        
+        String salida = "Repositorio: " + nombre + '\n';
+        salida += "Autor: " + autor + '\n';
+        salida += "Archivos en Workspace: " + numArchivosWS + '\n';
+        salida += "Archivos en Index: " + numArchivosIn + '\n';
+        
+        return salida;
+    }
        
     
     // extra
@@ -134,6 +155,9 @@ public class Git {
         }
         return salida;
     }
+    
+    
+    
     
     
     

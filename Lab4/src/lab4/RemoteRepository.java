@@ -24,10 +24,12 @@ public class RemoteRepository extends Directorio{
 
     public RemoteRepository(String nombre) {
         super(nombre);
+        commits = new CommitContainer();
     }
 
     public RemoteRepository(String nombre, List archivos) {
         super(nombre, archivos);
+        commits = new CommitContainer();
     }
 
     public CommitContainer getCommits() {

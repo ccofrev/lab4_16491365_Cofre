@@ -3,11 +3,14 @@
  *   * 
  */
 package lab4;
-
+import javax.swing.JOptionPane;
+import javax.swing.border.TitledBorder;
 /**
  *
  * @author Carlos Cofré <carlos.cofre@usach.cl>
  */
+
+
 public class Lab4_Frame extends javax.swing.JFrame {
 
     /**
@@ -34,24 +37,46 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnCommit = new javax.swing.JButton();
+        btnPush = new javax.swing.JButton();
+        btnPull = new javax.swing.JButton();
+        btnStatus = new javax.swing.JButton();
+        btnLog = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        jLayeredPane3 = new javax.swing.JLayeredPane();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
         jLayeredPane4 = new javax.swing.JLayeredPane();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
+        btnGuardar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        labelInfo = new javax.swing.JLabel();
+        jLayeredPane6 = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        labelWorkspace = new javax.swing.JLabel();
+        statusWorkspace = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        labelIndex = new javax.swing.JLabel();
+        statusIndex = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        labelLocalRepo = new javax.swing.JLabel();
+        statusLocalRepo = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        labelRemoteRepo = new javax.swing.JLabel();
+        statusRemoteRepo = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLayeredPane7 = new javax.swing.JLayeredPane();
+        jPanel3 = new javax.swing.JPanel();
+        labelSeleccion = new javax.swing.JLabel();
+        editPanel = new javax.swing.JLayeredPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        textAreaPrincipal = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuNuevoUsuario = new javax.swing.JMenuItem();
+        menuNuevoRepo = new javax.swing.JMenuItem();
+        menuNuevoArchivo = new javax.swing.JMenuItem();
 
         jScrollPane2.setViewportView(jEditorPane2);
 
@@ -61,127 +86,475 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Laboratorio 4 Paradigmas - Simulador GIT");
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jButton1.setText("jButton1");
+        btnAdd.setText("Add");
+        btnAdd.setEnabled(false);
+        btnAdd.setName(""); // NOI18N
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton1");
+        btnCommit.setText("Commit");
+        btnCommit.setEnabled(false);
+        btnCommit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommitActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton1");
+        btnPush.setText("Push");
+        btnPush.setEnabled(false);
+        btnPush.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPushActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton1");
+        btnPull.setText("Pull");
+        btnPull.setEnabled(false);
+        btnPull.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPullActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton1");
+        btnStatus.setText("Status");
+        btnStatus.setEnabled(false);
+        btnStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStatusActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("jButton1");
+        btnLog.setText("Log");
+        btnLog.setEnabled(false);
+        btnLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogActionPerformed(evt);
+            }
+        });
 
-        jLayeredPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnAdd, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnCommit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnPush, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnPull, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnStatus, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btnLog, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCommit, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnPush, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnPull, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnLog, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(jButton1)
+                .addComponent(btnAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(btnCommit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(btnPush)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(btnPull)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
+                .addComponent(btnStatus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnLog)
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
-        jSeparator5.setBackground(new java.awt.Color(102, 0, 102));
+        jLayeredPane4.setBackground(new java.awt.Color(0, 204, 51));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("jLabel1");
+        btnGuardar.setText("Guardar");
+        btnGuardar.setEnabled(false);
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
-        jLayeredPane3.setLayer(jSeparator5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane3.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.setEnabled(false);
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
-        jLayeredPane3.setLayout(jLayeredPane3Layout);
-        jLayeredPane3Layout.setHorizontalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane3Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator5)
+        jLayeredPane5.setLayer(btnGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(btnLimpiar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimpiar)
+                .addGap(28, 28, 28))
+        );
+        jLayeredPane5Layout.setVerticalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btnGuardar)
+                .addComponent(btnLimpiar))
+        );
+
+        jLayeredPane6.setToolTipText("texto");
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+
+        labelWorkspace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelWorkspace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/workspace.png"))); // NOI18N
+        labelWorkspace.setText("  ");
+        labelWorkspace.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        statusWorkspace.setText("Status");
+        statusWorkspace.setEnabled(false);
+        statusWorkspace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusWorkspaceActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Workspace");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(statusWorkspace, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jLayeredPane3Layout.setVerticalGroup(
-            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(19, 19, 19)
+                .addComponent(statusWorkspace)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelWorkspace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jLayeredPane4.setBackground(new java.awt.Color(51, 0, 204));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        labelIndex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelIndex.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/index.png"))); // NOI18N
+        labelIndex.setText(" ");
+        labelIndex.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLayeredPane4.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        statusIndex.setText("Status");
+        statusIndex.setEnabled(false);
+        statusIndex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusIndexActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Index");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelIndex, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(statusIndex, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(statusIndex)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelIndex, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+
+        labelLocalRepo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLocalRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/localrepo.png"))); // NOI18N
+        labelLocalRepo.setText(" ");
+        labelLocalRepo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        statusLocalRepo.setText("Status");
+        statusLocalRepo.setEnabled(false);
+        statusLocalRepo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusLocalRepoActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Local Repository");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelLocalRepo, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(statusLocalRepo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(19, 19, 19)
+                .addComponent(statusLocalRepo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelLocalRepo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+
+        labelRemoteRepo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelRemoteRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/remoterepo.png"))); // NOI18N
+        labelRemoteRepo.setText(" ");
+        labelRemoteRepo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        statusRemoteRepo.setText("Status");
+        statusRemoteRepo.setEnabled(false);
+        statusRemoteRepo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusRemoteRepoActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Remote Repository");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRemoteRepo, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(statusRemoteRepo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(statusRemoteRepo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelRemoteRepo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLayeredPane6.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jPanel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jPanel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane6Layout = new javax.swing.GroupLayout(jLayeredPane6);
+        jLayeredPane6.setLayout(jLayeredPane6Layout);
+        jLayeredPane6Layout.setHorizontalGroup(
+            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane6Layout.setVerticalGroup(
+            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane6Layout.createSequentialGroup()
+                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        labelSeleccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png"))); // NOI18N
+        labelSeleccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addGap(200, 200, 200))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLayeredPane7.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane7Layout = new javax.swing.GroupLayout(jLayeredPane7);
+        jLayeredPane7.setLayout(jLayeredPane7Layout);
+        jLayeredPane7Layout.setHorizontalGroup(
+            jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 323, Short.MAX_VALUE)
+            .addGroup(jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane7Layout.setVerticalGroup(
+            jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 246, Short.MAX_VALUE)
+            .addGroup(jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        editPanel.setToolTipText("");
+
+        textAreaPrincipal.setColumns(20);
+        textAreaPrincipal.setRows(5);
+        textAreaPrincipal.setEnabled(false);
+        jScrollPane3.setViewportView(textAreaPrincipal);
+
+        editPanel.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
+        editPanel.setLayout(editPanelLayout);
+        editPanelLayout.setHorizontalGroup(
+            editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+        );
+        editPanelLayout.setVerticalGroup(
+            editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        jLayeredPane4.setLayer(jLayeredPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(labelInfo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jLayeredPane6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jLayeredPane7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(editPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
         jLayeredPane4.setLayout(jLayeredPane4Layout);
         jLayeredPane4Layout.setHorizontalGroup(
             jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                        .addComponent(labelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLayeredPane5))
+                    .addComponent(jLayeredPane6)
+                    .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLayeredPane7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jLayeredPane4Layout.setVerticalGroup(
             jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3)
+            .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                .addComponent(jLayeredPane6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editPanel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelInfo))
+                .addContainerGap())
         );
 
-        jLayeredPane2.setLayer(jLayeredPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane2.setLayer(jLayeredPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
         jLayeredPane2Layout.setHorizontalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane3)
-            .addComponent(jLayeredPane4)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addComponent(jLayeredPane4)
+                .addContainerGap())
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(22, 22, 22)
                 .addComponent(jLayeredPane4))
         );
 
         jMenu1.setText("Archivo");
 
-        jMenuItem2.setText("Nuevo repositorio");
-        jMenu1.add(jMenuItem2);
+        menuNuevoUsuario.setText("Nuevo usuario");
+        menuNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuNuevoUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuNuevoUsuario);
 
-        jMenuItem3.setText("Nuevo usuario");
-        jMenu1.add(jMenuItem3);
+        menuNuevoRepo.setText("Nuevo repositorio");
+        menuNuevoRepo.setEnabled(false);
+        menuNuevoRepo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuNuevoRepoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuNuevoRepo);
 
-        jMenuItem1.setText("Nuevo archivo (workspace)");
-        jMenu1.add(jMenuItem1);
+        menuNuevoArchivo.setText("Nuevo archivo (workspace)");
+        menuNuevoArchivo.setEnabled(false);
+        menuNuevoArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuNuevoArchivoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuNuevoArchivo);
 
         jMenuBar1.add(jMenu1);
 
@@ -192,11 +565,10 @@ public class Lab4_Frame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLayeredPane2)
-                .addContainerGap())
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +582,176 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    //// BOTONES
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddActionPerformed
 
+    private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommitActionPerformed
+
+    private void btnPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPushActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPushActionPerformed
+
+    private void btnPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPullActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPullActionPerformed
+
+    private void btnStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatusActionPerformed
+        // TODO add your handling code here:
+        
+        // INTERFAZ
+        textAreaPrincipal.setEnabled(false);
+        btnGuardar.setEnabled(false);
+        btnLimpiar.setEnabled(false);
+        estadoAreaTexto = GITMONITOREO;
+        // GIT
+        
+        
+    }//GEN-LAST:event_btnStatusActionPerformed
+
+    private void btnLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogActionPerformed
+        // TODO add your handling code here:
+        // INTERFAZ
+        textAreaPrincipal.setEnabled(false);
+        btnGuardar.setEnabled(false);
+        btnLimpiar.setEnabled(false);
+        estadoAreaTexto = GITMONITOREO;
+        // GIT
+        
+        
+    }//GEN-LAST:event_btnLogActionPerformed
+
+    
+    ///// MENUES
+    private void menuNuevoRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNuevoRepoActionPerformed
+        // TODO add your handling code here:
+        nombreRepositorio = JOptionPane.showInputDialog("Ingrese un nombre para el nuevo repositorio");
+        repositorio = Git.init(nombreRepositorio, usuario);
+        menuNuevoRepo.setEnabled(false);
+        menuNuevoArchivo.setEnabled(true);
+        labelInfo.setText(nombreRepositorio + "   " + usuario.toString());
+        System.out.println("Nuevo repositorio creado!");
+        System.out.println(repositorio.toString());
+        
+        
+        btnAdd.setEnabled(true);
+        btnCommit.setEnabled(true);
+        btnPush.setEnabled(true);
+        btnPull.setEnabled(true);
+        btnStatus.setEnabled(true);
+        btnLog.setEnabled(true);
+        
+        statusWorkspace.setEnabled(true);
+        statusIndex.setEnabled(true);
+        statusLocalRepo.setEnabled(true);
+        statusRemoteRepo.setEnabled(true);
+        
+        updateCount();
+
+    }//GEN-LAST:event_menuNuevoRepoActionPerformed
+
+    private void menuNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNuevoUsuarioActionPerformed
+        // TODO add your handling code here:
+        nombreUsuario = JOptionPane.showInputDialog("Ingrese un nombre para el nuevo usuario");
+        mailUsuario = JOptionPane.showInputDialog("Ingrese una direccion de correo electronico para el nuevo usuario");
+
+        usuario = new Usuario(nombreUsuario, mailUsuario);
+        menuNuevoRepo.setEnabled(true);
+        menuNuevoUsuario.setEnabled(false);
+        System.out.println("Nuevo usuario registrado!");
+        System.out.println(usuario.toString());
+        
+    }//GEN-LAST:event_menuNuevoUsuarioActionPerformed
+
+    private void menuNuevoArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNuevoArchivoActionPerformed
+        // TODO add your handling code here:
+        nombreNuevoArchivo = JOptionPane.showInputDialog("Ingrese un nombre para el nuevo archivo");
+	JOptionPane.showMessageDialog(null, "Se abrira la edicion del nuevo archivo: " + nombreNuevoArchivo);
+        
+        //labelSubtitulo.setText("Edicion - " + nombreNuevoArchivo);
+        //editPanel.setTitle("Edicion - " + nombreNuevoArchivo);
+        
+        tituloBorde = "Edicion - " + nombreNuevoArchivo;
+        bordeEditPanel.setBorder(bordeEditPanel);
+        
+        
+        archivo = new Archivo(nombreNuevoArchivo);
+        textAreaPrincipal.setEnabled(true);
+        btnGuardar.setEnabled(true);
+        btnLimpiar.setEnabled(true);
+        estadoAreaTexto = NUEVOEDIT;
+        
+    }//GEN-LAST:event_menuNuevoArchivoActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        switch(estadoAreaTexto){
+            case NUEVOEDIT:
+            textAreaPrincipal.setText("");
+            break;
+        }
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        switch(estadoAreaTexto){
+            case NUEVOEDIT:
+                archivo.setContenido(textAreaPrincipal.getText());
+                btnGuardar.setEnabled(false);
+                btnLimpiar.setEnabled(false);
+                textAreaPrincipal.setEnabled(false);
+                System.out.println("Archivo creado: ");
+                repositorio.getWorkspace().addArchivo(archivo);
+                System.out.println("Archivo cargado al workspace");
+                System.out.println(archivo.toString());
+                updateCount();
+                break;
+            
+        }
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void statusWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusWorkspaceActionPerformed
+        
+        tituloBorde = "workspace";
+        editPanel.setBorder(bordeEditPanel);
+        
+    
+    }//GEN-LAST:event_statusWorkspaceActionPerformed
+
+    private void statusIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusIndexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusIndexActionPerformed
+
+    private void statusLocalRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusLocalRepoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusLocalRepoActionPerformed
+
+    private void statusRemoteRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusRemoteRepoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusRemoteRepoActionPerformed
+
+    private void updateCount(){
+        labelWorkspace.setText(convertToMultiline("Archivos: " + repositorio.getWorkspace().getArchivos().size()));
+        labelIndex.setText(convertToMultiline("\n\nArchivos: " + repositorio.getIndex().getArchivos().size() + 
+                                                "\n-Staged: " + repositorio.getIndex().getStaged().size() +
+                                                "\n-Modified: " + repositorio.getIndex().getModified().size() +
+                                                "\n-Commited: " + repositorio.getIndex().getCommited().size() ));
+        labelLocalRepo.setText(convertToMultiline("Archivos: " + repositorio.getLocalRepository().getArchivos().size() + 
+                                                  "\nCommits: " + repositorio.getLocalRepository().getCommits().size() ));
+        labelRemoteRepo.setText(convertToMultiline("Archivos: " + repositorio.getRemoteRepository().getArchivos().size() +
+                                                  "\nCommits: " + repositorio.getRemoteRepository().getCommits().size() ));
+        
+    }
+    
+    public static String convertToMultiline(String orig){
+        return "<html>" + orig.replaceAll("\n", "<br>");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -221,15 +762,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         
-        /// ELEMENTOS GIT
-        boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
-        int navegacion = 1; // etapa del menu
-        String nombreUsuario = "@desconocido";
-        String mailUsuario = "@desconocido";
-        String nombreRepositorio = "@desconocido";
-        Usuario usuario = new Usuario(nombreUsuario, mailUsuario); //default
-        Repositorio repositorio = Git.init(nombreRepositorio, usuario);  // default1
+        
         
         
         try {
@@ -259,32 +792,81 @@ public class Lab4_Frame extends javax.swing.JFrame {
         });
     }
 
+    //// MIOS
+    String nombreNuevoArchivo;
+    String tituloBorde = "";
+    TitledBorder bordeEditPanel = new TitledBorder(tituloBorde);
+    
+    /// ELEMENTOS GIT
+    boolean salir = false;
+    int opcion; //Guardaremos la opcion del usuario
+    int navegacion = 1; // etapa del menu
+    
+    /// NUEVOEDIT: edicion archivos GITMONITOREO: se muestran resultados de comandos git que solo monitorean (log, status).
+    final static int DEFAULT = 0, NUEVOEDIT = 1, GITMONITOREO = 2;
+    int estadoAreaTexto = DEFAULT;
+    
+    final static int WORKSPACE = 1, INDEX = 2, LOCALREPO = 3, REMOTEREPO = 4;
+        
+    Archivo archivo;
+    String nombreUsuario = "@desconocido";
+    String mailUsuario = "@desconocido";
+    String nombreRepositorio = "@desconocido";
+    Usuario usuario = new Usuario(nombreUsuario, mailUsuario); //default
+    Repositorio repositorio = Git.init(nombreRepositorio, usuario);  // default1
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCommit;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnLog;
+    private javax.swing.JButton btnPull;
+    private javax.swing.JButton btnPush;
+    private javax.swing.JButton btnStatus;
+    private javax.swing.JLayeredPane editPanel;
     private javax.swing.JEditorPane jEditorPane2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JLayeredPane jLayeredPane4;
+    private javax.swing.JLayeredPane jLayeredPane5;
+    private javax.swing.JLayeredPane jLayeredPane6;
+    private javax.swing.JLayeredPane jLayeredPane7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel labelIndex;
+    private javax.swing.JLabel labelInfo;
+    private javax.swing.JLabel labelLocalRepo;
+    private javax.swing.JLabel labelRemoteRepo;
+    private javax.swing.JLabel labelSeleccion;
+    private javax.swing.JLabel labelWorkspace;
+    private javax.swing.JMenuItem menuNuevoArchivo;
+    private javax.swing.JMenuItem menuNuevoRepo;
+    private javax.swing.JMenuItem menuNuevoUsuario;
+    private javax.swing.JButton statusIndex;
+    private javax.swing.JButton statusLocalRepo;
+    private javax.swing.JButton statusRemoteRepo;
+    private javax.swing.JButton statusWorkspace;
+    private javax.swing.JTextArea textAreaPrincipal;
     // End of variables declaration//GEN-END:variables
+
+    
 }
