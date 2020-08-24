@@ -55,7 +55,9 @@ public class Git {
 
     public static Repositorio commit(Repositorio repositorio, Usuario usuario, String comentario){
         
+        
         Index index = repositorio.getIndex();
+        if(index.getModOrStaged().size()<=0)return null;
         Workspace workspace = repositorio.getWorkspace();
         LocalRepository localRepository = repositorio.getLocalRepository();
         
@@ -199,7 +201,7 @@ public class Git {
         LocalRepository localRepository = repositorio.getLocalRepository();
         CommitContainer commits = localRepository.getCommits();
         for(int i=0; i<Math.min(commits.size(),5); i++){
-            salida += commits.getCommits().get(i).toString() + '\n';
+            salida += "-" + commits.getCommits().get(i).toString() + '\n';
         }
         return salida;
     }

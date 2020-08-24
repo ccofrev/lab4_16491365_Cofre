@@ -51,7 +51,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuNuevoRepo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo repositorio"/>
+                <Property name="text" type="java.lang.String" value="Nuevo repositorio (git init)"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -60,7 +60,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuNuevoArchivo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo archivo (workspace)"/>
+                <Property name="text" type="java.lang.String" value="Nuevo archivo (en workspace)"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -127,7 +127,6 @@
               <Component id="btnCommit" alignment="0" pref="100" max="32767" attributes="0"/>
               <Component id="btnPush" alignment="0" pref="100" max="32767" attributes="0"/>
               <Component id="btnPull" alignment="0" pref="100" max="32767" attributes="0"/>
-              <Component id="btnStatus" alignment="0" pref="100" max="32767" attributes="0"/>
               <Component id="btnLog" alignment="0" pref="100" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
@@ -142,9 +141,7 @@
                   <Component id="btnPush" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="btnPull" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnStatus" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnLog" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -187,15 +184,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPullActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnStatus">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Status"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStatusActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLog">
@@ -740,6 +728,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="Simulador GIT&#xa;&#xa;Este programa representa el funcionamiento de un &#xa;sistema controlador de versiones basado en GIT.&#xa;&#xa;Tal como se har&#xed;a en una plataforma como GitHub, &#xa;antes de iniciar con un proyecto, deber&#xed;a existir un registro&#xa;de usuario.&#xa;Para acceder al registro de usuario basta con acceder a &#xa;trav&#xe9;s del menu &quot;Archivo&quot; y seleccionar &quot;Nuevo Usuario&quot;.&#xa;Ninguna otra opcion en el programa estara disponible si&#xa;primero no se registra un usuario con nombre y correo &#xa;electronico. Para esta simulacion, se considera la &#xa;creacion de un unico usuario.&#xa;Una vez que se registra un usuario, se puede registrar un&#xa;nuevo repositorio general (un nuevo proyecto). Esto se &#xa;consigue a trav&#xe9;s del menu &quot;Archivo/Nuevo Repositorio&quot;.&#xa;Esta accion es equivalente a usar el comando git init.&#xa;Para esta simulacion se considera la creacion de un &#xa;unico repositorio.&#xa;Se solicitara para esto ingresar un nombre para el&#xa;repositorio.&#xa;Una vez que se crea el repositorio, se habilita la creacion&#xa;de archivos, en el mismo menu &quot;Archivo/Nuevo archivo&quot;.&#xa;Se pueden crear multiples archivos, los cuales se cargan&#xa;en la zona de trabajo &quot;workspace&quot;.&#xa;&#xa;Agregando por lo menos un archivo en el workspace, se&#xa;habilitaran los comandos GIT. &#xa;&#xa;&#xa;"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -772,7 +761,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="labelSubtitulo">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="GIT"/>
+                        <Property name="text" type="java.lang.String" value="Instrucciones"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator4">

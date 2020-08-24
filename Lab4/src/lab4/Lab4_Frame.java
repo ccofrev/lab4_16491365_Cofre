@@ -43,7 +43,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
         btnCommit = new javax.swing.JButton();
         btnPush = new javax.swing.JButton();
         btnPull = new javax.swing.JButton();
-        btnStatus = new javax.swing.JButton();
         btnLog = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLayeredPane4 = new javax.swing.JLayeredPane();
@@ -126,14 +125,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
             }
         });
 
-        btnStatus.setText("Status");
-        btnStatus.setEnabled(false);
-        btnStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStatusActionPerformed(evt);
-            }
-        });
-
         btnLog.setText("Log");
         btnLog.setEnabled(false);
         btnLog.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +137,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane1.setLayer(btnCommit, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btnPush, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btnPull, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(btnStatus, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btnLog, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -157,7 +147,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
             .addComponent(btnCommit, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
             .addComponent(btnPush, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
             .addComponent(btnPull, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addComponent(btnStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
             .addComponent(btnLog, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -171,9 +160,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 .addComponent(btnPush)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPull)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnStatus)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnLog)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -473,10 +460,11 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         textAreaPrincipal.setColumns(20);
         textAreaPrincipal.setRows(5);
+        textAreaPrincipal.setText("Simulador GIT\n\nEste programa representa el funcionamiento de un \nsistema controlador de versiones basado en GIT.\n\nTal como se haría en una plataforma como GitHub, \nantes de iniciar con un proyecto, debería existir un registro\nde usuario.\nPara acceder al registro de usuario basta con acceder a \ntravés del menu \"Archivo\" y seleccionar \"Nuevo Usuario\".\nNinguna otra opcion en el programa estara disponible si\nprimero no se registra un usuario con nombre y correo \nelectronico. Para esta simulacion, se considera la \ncreacion de un unico usuario.\nUna vez que se registra un usuario, se puede registrar un\nnuevo repositorio general (un nuevo proyecto). Esto se \nconsigue a través del menu \"Archivo/Nuevo Repositorio\".\nEsta accion es equivalente a usar el comando git init.\nPara esta simulacion se considera la creacion de un \nunico repositorio.\nSe solicitara para esto ingresar un nombre para el\nrepositorio.\nUna vez que se crea el repositorio, se habilita la creacion\nde archivos, en el mismo menu \"Archivo/Nuevo archivo\".\nSe pueden crear multiples archivos, los cuales se cargan\nen la zona de trabajo \"workspace\".\n\nAgregando por lo menos un archivo en el workspace, se\nhabilitaran los comandos GIT. \n\n\n");
         textAreaPrincipal.setEnabled(false);
         jScrollPane3.setViewportView(textAreaPrincipal);
 
-        labelSubtitulo.setText("GIT");
+        labelSubtitulo.setText("Instrucciones");
 
         jLayeredPane3.setLayer(labelSubtitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane3.setLayer(jSeparator4, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -587,7 +575,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         });
         jMenu1.add(menuNuevoUsuario);
 
-        menuNuevoRepo.setText("Nuevo repositorio");
+        menuNuevoRepo.setText("Nuevo repositorio (git init)");
         menuNuevoRepo.setEnabled(false);
         menuNuevoRepo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -596,7 +584,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         });
         jMenu1.add(menuNuevoRepo);
 
-        menuNuevoArchivo.setText("Nuevo archivo (workspace)");
+        menuNuevoArchivo.setText("Nuevo archivo (en workspace)");
         menuNuevoArchivo.setEnabled(false);
         menuNuevoArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -653,7 +641,11 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private void btnCommitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommitActionPerformed
         // TODO add your handling code here:
         String comentario = JOptionPane.showInputDialog("Ingrese comentario para commit");
-        Git.commit(repositorio, usuario, comentario);
+        Repositorio repo = Git.commit(repositorio, usuario, comentario);
+        if(repo==null){
+            System.out.println("Nada nuevo para commit");
+            return;
+        }
 
         updateCount();
         System.out.println(repositorio.getLocalRepository().getLastCommit().toString());
@@ -672,34 +664,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
         updateCount();
     }//GEN-LAST:event_btnPullActionPerformed
 
-    private void btnStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatusActionPerformed
-        // TODO add your handling code here:
-        
-        // INTERFAZ
-        //textAreaPrincipal.setEnabled(false);
-        textAreaPrincipal.setEditable(false);
-        btnGuardar.setEnabled(false);
-        btnLimpiar.setEnabled(false);
-        
-        estadoAreaTexto = GITMONITOREO;
-        // GIT
-        
-        
-    }//GEN-LAST:event_btnStatusActionPerformed
-
-    private void btnLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogActionPerformed
-        // TODO add your handling code here:
-        // INTERFAZ
-        //textAreaPrincipal.setEnabled(false);
-        textAreaPrincipal.setEditable(false);
-        btnGuardar.setEnabled(false);
-        btnLimpiar.setEnabled(false);
-        estadoAreaTexto = GITMONITOREO;
-        // GIT
-        
-        
-    }//GEN-LAST:event_btnLogActionPerformed
-
     
     ///// MENUES
     private void menuNuevoRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNuevoRepoActionPerformed
@@ -717,7 +681,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         btnCommit.setEnabled(true);
         btnPush.setEnabled(true);
         btnPull.setEnabled(true);
-        btnStatus.setEnabled(true);
+
         btnLog.setEnabled(true);
         
         statusWorkspace.setEnabled(true);
@@ -836,6 +800,25 @@ public class Lab4_Frame extends javax.swing.JFrame {
         updateCount();
     }//GEN-LAST:event_statusRemoteRepoActionPerformed
 
+    private void btnLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogActionPerformed
+        // TODO add your handling code here:
+        // INTERFAZ
+        //textAreaPrincipal.setEnabled(false);
+        textAreaPrincipal.setEditable(false);
+        btnGuardar.setEnabled(false);
+        btnLimpiar.setEnabled(false);
+        estadoAreaTexto = GITMONITOREO;
+        // GIT
+        
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png")));
+        labelSubtitulo.setText("GIT Log");
+        labelTitleStatus.setText("GIT");
+        //textAreaPrincipal.setText(Git.log(repositorio));
+        System.out.println(Git.log(repositorio));
+        updateCount();
+
+    }//GEN-LAST:event_btnLogActionPerformed
+
     private void updateCount(){
         labelWorkspace.setText(convertToMultiline("Archivos: " + repositorio.getWorkspace().getArchivos().size()));
         
@@ -930,7 +913,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btnLog;
     private javax.swing.JButton btnPull;
     private javax.swing.JButton btnPush;
-    private javax.swing.JButton btnStatus;
     private javax.swing.JLayeredPane editPanel;
     private javax.swing.JEditorPane jEditorPane2;
     private javax.swing.JLabel jLabel1;
