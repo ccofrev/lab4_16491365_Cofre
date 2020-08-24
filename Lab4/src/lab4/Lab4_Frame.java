@@ -677,12 +677,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         System.out.println(repositorio.toString());
         
         
-        btnAdd.setEnabled(true);
-        btnCommit.setEnabled(true);
-        btnPush.setEnabled(true);
-        btnPull.setEnabled(true);
-
-        btnLog.setEnabled(true);
+        
         
         statusWorkspace.setEnabled(true);
         statusIndex.setEnabled(true);
@@ -718,8 +713,10 @@ public class Lab4_Frame extends javax.swing.JFrame {
         
         
         archivo = new Archivo(nombreNuevoArchivo);
+        textAreaPrincipal.setText("");
         textAreaPrincipal.setEnabled(true);
         textAreaPrincipal.setEditable(true);
+        
         btnGuardar.setEnabled(true);
         btnLimpiar.setEnabled(true);
         estadoAreaTexto = NUEVOEDIT;
@@ -752,7 +749,10 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 repositorio.getWorkspace().addArchivo(archivo);
                 System.out.println("Archivo cargado al workspace");
                 System.out.println(archivo.toString());
+                
+                habilitarComandos();
                 updateCount();
+                
                 break;
             
         }
@@ -833,6 +833,14 @@ public class Lab4_Frame extends javax.swing.JFrame {
         labelRemoteRepo.setText(convertToMultiline("Archivos: " + repositorio.getRemoteRepository().getArchivos().size() +
                                                   "\nCommits: " + repositorio.getRemoteRepository().getCommits().size() ));
         
+    }
+    
+    public void habilitarComandos(){
+        btnAdd.setEnabled(true);
+        btnCommit.setEnabled(true);
+        btnPush.setEnabled(true);
+        btnPull.setEnabled(true);
+        btnLog.setEnabled(true);
     }
     
     public static String convertToMultiline(String orig){
