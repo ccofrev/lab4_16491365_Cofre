@@ -7,6 +7,8 @@
 package lab4;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -87,18 +89,20 @@ public class Repositorio {
 
     public void copiarEntre(List<String> nArchivos, Directorio zona1, Directorio zona2){
         for(int i=0; i<nArchivos.size(); i++){
-            zona2.addArchivo( zona1.getArchivo(nArchivos.get(i)) );            
+                zona2.addArchivo( zona1.getArchivo(nArchivos.get(i)).clon() );
         }
     }
    
     public void copiarEntre(String nombreArchivo, Directorio zona1, Directorio zona2){
-            zona2.addArchivo( zona1.getArchivo(nombreArchivo) );            
+            zona2.addArchivo( zona1.getArchivo(nombreArchivo).clon() );
     }
 
     @Override
     public String toString() {
         return "Repositorio{" + "nombre=" + nombre + ", usuario=" + usuario + ", workspace=" + workspace + ", index=" + index + ", localRepository=" + localRepository + ", remoteRepository=" + remoteRepository + '}';
     }
+    
+    
     
     
            

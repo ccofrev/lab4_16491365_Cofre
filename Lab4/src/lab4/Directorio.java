@@ -66,7 +66,10 @@ public class Directorio {
     }
     
     public void addArchivo(Archivo archivo){
-        (this.archivos).add(archivo);
+        if(this.contains(archivo.getNombre()))
+            this.eliminar(archivo.getNombre());
+            archivos.add(archivo);
+        
     }
     
     public void addSubiderecotorios(List<Directorio> subdirectorios){
@@ -117,7 +120,26 @@ public class Directorio {
         return false;
     }
     
-        
+    public void eliminar(Archivo archivo){
+        archivos.remove(archivo);
+    }
+    
+    public void eliminar(String nombreArchivo){
+        if(this.contains(nombreArchivo)){
+            for(int i=0; i < archivos.size(); i++) {
+                String s = archivos.get(i).getNombre();
+                if(nombreArchivo.equals(s)) {
+                    archivos.remove(i);
+                }
+            }}
+    }
+    
+    public List<String> getNombresArchivos(){
+        List<String> salida = new ArrayList<String>();
+        for(Archivo ar: archivos)
+            salida.add(ar.getNombre());
+        return salida;
+    }
     
     
 }

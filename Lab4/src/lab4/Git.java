@@ -35,11 +35,16 @@ public class Git {
         for (String nombreArchivo : nombresArchivos){
             if(workspace.contains(nombreArchivo)){      // se revisa si el archivo solicitado esta en ws
                 if(localRepository.contains(nombreArchivo)){    // se revisa si esta en lr
-                    if(localRepository.getArchivo(nombreArchivo).reemplazable(workspace.getArchivo(nombreArchivo))){
+                    System.out.println("########################################");
+                    System.out.println(localRepository.getArchivo(nombreArchivo));
+                    System.out.println(workspace.getArchivo(nombreArchivo));
+                    System.out.println("########################################");
+                    if( (localRepository.getArchivo(nombreArchivo)).reemplazable(workspace.getArchivo(nombreArchivo)) ){
                         index.cambiarEstado(nombreArchivo, Index.MODIFIED);
                     }
                     
                 }else{
+                    System.out.println(">>> NO MODIFIED!");
                     index.addArchivo(nombreArchivo, Index.STAGED);
                 }
             }
@@ -83,6 +88,7 @@ public class Git {
     public static Repositorio pull(Repositorio repositorio){
         RemoteRepository remoteRepository = repositorio.getRemoteRepository();
         Workspace workspace = repositorio.getWorkspace();
+        workspace.setArchivos(null);
         workspace.setArchivos(remoteRepository.getArchivos());
         
         return repositorio;          
@@ -166,7 +172,7 @@ public class Git {
                 salida += "\nCommits: " + numCommitsLR + "\n";
                 CommitContainer commsLR = localRepository.getCommits();
                 for(Commit comm: commsLR.getCommits()){
-                    salida += "-" + comm.toString() + "\n";
+                    salida += "-" + comm.toString2() + "\n";
                 }
                 break;
                 
@@ -178,7 +184,7 @@ public class Git {
                 salida += "\nCommits: " + numCommitsRR + "\n";
                 CommitContainer commsRR = remoteRepository.getCommits();
                 for(Commit comm: commsRR.getCommits()){
-                    salida += "-" + comm.toString() + "\n";
+                    salida += "-" + comm.toString2() + "\n";
                 }
                 break;
             
@@ -201,7 +207,7 @@ public class Git {
         LocalRepository localRepository = repositorio.getLocalRepository();
         CommitContainer commits = localRepository.getCommits();
         for(int i=0; i<Math.min(commits.size(),5); i++){
-            salida += "-" + commits.getCommits().get(i).toString() + '\n';
+            salida += "-" + commits.getCommits().get(i).toString2() + '\n';
         }
         return salida;
     }

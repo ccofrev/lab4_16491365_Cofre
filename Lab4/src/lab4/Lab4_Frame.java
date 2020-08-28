@@ -3,9 +3,11 @@
  *   * 
  */
 package lab4;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.border.TitledBorder;
+
 
 /**
  *
@@ -47,6 +49,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLayeredPane4 = new javax.swing.JLayeredPane();
         jLayeredPane5 = new javax.swing.JLayeredPane();
+        btnEliminar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         labelInfo = new javax.swing.JLabel();
@@ -71,6 +74,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         labelSeleccion = new javax.swing.JLabel();
         labelTitleStatus = new javax.swing.JLabel();
+        labelStatus = new javax.swing.JLabel();
         editPanel = new javax.swing.JLayeredPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         textAreaPrincipal = new javax.swing.JTextArea();
@@ -167,6 +171,15 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         jLayeredPane4.setBackground(new java.awt.Color(0, 204, 51));
 
+        btnEliminar.setForeground(new java.awt.Color(255, 0, 0));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setEnabled(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
         btnGuardar.setText("Guardar");
         btnGuardar.setEnabled(false);
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +196,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
             }
         });
 
+        jLayeredPane5.setLayer(btnEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane5.setLayer(btnGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane5.setLayer(btnLimpiar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -190,18 +204,24 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane5.setLayout(jLayeredPane5Layout);
         jLayeredPane5Layout.setHorizontalGroup(
             jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnEliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLimpiar)
-                .addGap(28, 28, 28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGuardar)
+                .addGap(22, 22, 22))
         );
         jLayeredPane5Layout.setVerticalGroup(
             jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(btnGuardar)
-                .addComponent(btnLimpiar))
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnLimpiar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLayeredPane6.setToolTipText("texto");
@@ -411,6 +431,8 @@ public class Lab4_Frame extends javax.swing.JFrame {
         labelTitleStatus.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         labelTitleStatus.setText("GIT");
 
+        labelStatus.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -423,16 +445,23 @@ public class Lab4_Frame extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(200, 200, 200))))
+                        .addGap(18, 18, 18)
+                        .addComponent(labelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelTitleStatus)
-                .addGap(52, 52, 52)
-                .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(labelSeleccion, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(labelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(61, Short.MAX_VALUE))))
         );
 
         jLayeredPane7.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -519,17 +548,18 @@ public class Lab4_Frame extends javax.swing.JFrame {
             .addGroup(jLayeredPane4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane4Layout.createSequentialGroup()
-                        .addComponent(labelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLayeredPane5))
                     .addComponent(jLayeredPane6)
                     .addGroup(jLayeredPane4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane4Layout.createSequentialGroup()
+                                .addComponent(labelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jLayeredPane4Layout.createSequentialGroup()
+                                .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(editPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jLayeredPane4Layout.setVerticalGroup(
             jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,10 +572,10 @@ public class Lab4_Frame extends javax.swing.JFrame {
                         .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(editPanel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelInfo))
-                .addContainerGap())
+                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelInfo)
+                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9))
         );
 
         jLayeredPane2.setLayer(jLayeredPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -554,9 +584,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
         jLayeredPane2.setLayout(jLayeredPane2Layout);
         jLayeredPane2Layout.setHorizontalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addComponent(jLayeredPane4)
-                .addContainerGap())
+            .addComponent(jLayeredPane4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -605,7 +633,8 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -623,14 +652,16 @@ public class Lab4_Frame extends javax.swing.JFrame {
     //// BOTONES
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        // TODO add your handling code here:
         String archivos = JOptionPane.showInputDialog("Ingrese archivo(s) para agregar");
-        
-
-        if(archivos.contains(" ") && archivos.split(" ").length>1){
-            Git.add(repositorio, Arrays.asList(archivos.split(" ")));
-        }else{
-            Git.add(repositorio, archivos);
+        if(archivos.equals("")){
+            Git.add(repositorio, repositorio.getWorkspace().getNombresArchivos());
+        }
+        else{
+            if(archivos.contains(" ") && archivos.split(" ").length>1){
+                Git.add(repositorio, Arrays.asList(archivos.split(" ")));
+            }else{
+                Git.add(repositorio, archivos);
+            }
         }
         
         updateCount();
@@ -676,9 +707,6 @@ public class Lab4_Frame extends javax.swing.JFrame {
         System.out.println("Nuevo repositorio creado!");
         System.out.println(repositorio.toString());
         
-        
-        
-        
         statusWorkspace.setEnabled(true);
         statusIndex.setEnabled(true);
         statusLocalRepo.setEnabled(true);
@@ -704,22 +732,26 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private void menuNuevoArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNuevoArchivoActionPerformed
         // TODO add your handling code here:
         nombreNuevoArchivo = JOptionPane.showInputDialog("Ingrese un nombre para el nuevo archivo");
-	JOptionPane.showMessageDialog(null, "Se abrira la edicion del nuevo archivo: " + nombreNuevoArchivo);
         
-        labelSubtitulo.setText("Edicion - " + nombreNuevoArchivo);
-        
-        tituloBorde = "Edicion - " + nombreNuevoArchivo;
-        bordeEditPanel.setBorder(bordeEditPanel);
-        
-        
-        archivo = new Archivo(nombreNuevoArchivo);
-        textAreaPrincipal.setText("");
+        if((archivo = repositorio.getWorkspace().getArchivo(nombreNuevoArchivo))!=null){
+            JOptionPane.showMessageDialog(null, "Archivo registrado previamente,\nSe abrirá edicion archivo: " + nombreNuevoArchivo);
+            textAreaPrincipal.setText(archivo.getContenido());
+            labelSubtitulo.setText("Edicion - " + nombreNuevoArchivo);
+            estadoAreaTexto = EXISTENTEEDIT;
+        }else{
+            archivo = new Archivo(nombreNuevoArchivo);
+            JOptionPane.showMessageDialog(null, "Se abrira la edicion del nuevo archivo: " + nombreNuevoArchivo);
+            labelSubtitulo.setText("Nuevo - " + nombreNuevoArchivo);
+            textAreaPrincipal.setText("");
+            estadoAreaTexto = NUEVOEDIT;
+        }
+
         textAreaPrincipal.setEnabled(true);
         textAreaPrincipal.setEditable(true);
         
         btnGuardar.setEnabled(true);
         btnLimpiar.setEnabled(true);
-        estadoAreaTexto = NUEVOEDIT;
+        btnEliminar.setEnabled(true);
         
     }//GEN-LAST:event_menuNuevoArchivoActionPerformed
 
@@ -739,6 +771,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 archivo.setContenido(textAreaPrincipal.getText());
                 btnGuardar.setEnabled(false);
                 btnLimpiar.setEnabled(false);
+                btnEliminar.setEnabled(false);
                 
                 textAreaPrincipal.setText("");
                 //textAreaPrincipal.setEnabled(false);
@@ -754,6 +787,26 @@ public class Lab4_Frame extends javax.swing.JFrame {
                 updateCount();
                 
                 break;
+                
+            case EXISTENTEEDIT:
+                archivo.actualizaContenido(textAreaPrincipal.getText());
+                btnGuardar.setEnabled(false);
+                btnLimpiar.setEnabled(false);
+                btnEliminar.setEnabled(false);
+                
+                textAreaPrincipal.setText("");
+                //textAreaPrincipal.setEnabled(false);
+                textAreaPrincipal.setEditable(false);
+                labelSubtitulo.setText("Modificaciones guardadas!");
+                
+                System.out.println("Archivo modificado: ");
+                repositorio.getWorkspace().addArchivo(archivo);
+                System.out.println("Archivo cargado modificado en workspace");
+                System.out.println(archivo.toString());
+                
+                habilitarComandos();
+                updateCount();
+                break;
             
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -761,10 +814,11 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private void statusWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusWorkspaceActionPerformed
         
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/workspace.png")));
-        labelSubtitulo.setText("Workspace");
+        labelSubtitulo.setText("Detalle WS");
         labelTitleStatus.setText("Workspace");
         String statusWS = Git.status(repositorio, Git.WORKSPACE);
         textAreaPrincipal.setText(statusWS);
+        labelStatus.setText(updateCountZona("WORKSPACE"));
         updateCount();
 
     
@@ -773,30 +827,33 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private void statusIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusIndexActionPerformed
         // TODO add your handling code here:
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/index.png")));
-        labelSubtitulo.setText("Index");
+        labelSubtitulo.setText("Detalle Index");
         labelTitleStatus.setText("Index");
         String statusIN = Git.status(repositorio, Git.INDEX);
         textAreaPrincipal.setText(statusIN);
+        labelStatus.setText(updateCountZona("INDEX"));
         updateCount();
     }//GEN-LAST:event_statusIndexActionPerformed
 
     private void statusLocalRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusLocalRepoActionPerformed
         // TODO add your handling code here:
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/localrepo.png")));
-        labelSubtitulo.setText("Local Repository");
+        labelSubtitulo.setText("Detalle LR");
         labelTitleStatus.setText("Local Repository");
         String statusLR = Git.status(repositorio, Git.LOCALREPO);
         textAreaPrincipal.setText(statusLR);
+        labelStatus.setText(updateCountZona("LOCALREPO"));
         updateCount();
     }//GEN-LAST:event_statusLocalRepoActionPerformed
 
     private void statusRemoteRepoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusRemoteRepoActionPerformed
         // TODO add your handling code here:
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/remoterepo.png")));
-        labelSubtitulo.setText("Remote Repository");
+        labelSubtitulo.setText("Detalle RR");
         labelTitleStatus.setText("Remote Repository");
         String statusRR = Git.status(repositorio, Git.REMOTEREPO);
         textAreaPrincipal.setText(statusRR);
+        labelStatus.setText(updateCountZona("REMOTEREPO"));
         updateCount();
     }//GEN-LAST:event_statusRemoteRepoActionPerformed
 
@@ -807,17 +864,39 @@ public class Lab4_Frame extends javax.swing.JFrame {
         textAreaPrincipal.setEditable(false);
         btnGuardar.setEnabled(false);
         btnLimpiar.setEnabled(false);
+        btnEliminar.setEnabled(false);
+        
         estadoAreaTexto = GITMONITOREO;
         // GIT
         
         labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png")));
         labelSubtitulo.setText("GIT Log");
         labelTitleStatus.setText("GIT");
-        //textAreaPrincipal.setText(Git.log(repositorio));
+        labelStatus.setText("");
+        textAreaPrincipal.setText(Git.log(repositorio));
+        
         System.out.println(Git.log(repositorio));
         updateCount();
 
     }//GEN-LAST:event_btnLogActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        int opcion = JOptionPane.showConfirmDialog(null, "Realmente desea elminar el archivo " + archivo.getNombre());
+        
+        if(opcion==0){
+            try{
+                repositorio.getWorkspace().eliminar(archivo);
+                JOptionPane.showMessageDialog(null, "Archivo eliminado correctamente");
+                textAreaPrincipal.setText("");
+                updateCount();
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "No se pudo eliminar\n" + e.toString());
+            }
+            
+        }
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void updateCount(){
         labelWorkspace.setText(convertToMultiline("Archivos: " + repositorio.getWorkspace().getArchivos().size()));
@@ -833,6 +912,32 @@ public class Lab4_Frame extends javax.swing.JFrame {
         labelRemoteRepo.setText(convertToMultiline("Archivos: " + repositorio.getRemoteRepository().getArchivos().size() +
                                                   "\nCommits: " + repositorio.getRemoteRepository().getCommits().size() ));
         
+    }
+    
+    private String updateCountZona(String zona){
+        String salida  = "";
+        switch(zona){
+            case "WORKSPACE":
+                salida = convertToMultiline("Archivos: " + repositorio.getWorkspace().getArchivos().size());
+                break;
+            case "INDEX":
+                salida = convertToMultiline("\n\nArchivos: " + repositorio.getIndex().getArchivos().size() + 
+                                                "\n-Staged: " + repositorio.getIndex().getStaged().size() +
+                                                "\n-Modified: " + repositorio.getIndex().getModified().size() +
+                                                "\n-Commited: " + repositorio.getIndex().getCommited().size() );
+                break;
+            case "LOCALREPO":
+                salida = convertToMultiline("Archivos: " + repositorio.getLocalRepository().getArchivos().size() + 
+                                                  "\nCommits: " + repositorio.getLocalRepository().getCommits().size() );
+                break;
+            case "REMOTEREPO":
+                salida = convertToMultiline("Archivos: " + repositorio.getRemoteRepository().getArchivos().size() +
+                                                  "\nCommits: " + repositorio.getRemoteRepository().getCommits().size());
+                break;
+            
+        }
+        return salida;
+
     }
     
     public void habilitarComandos(){
@@ -890,8 +995,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
     //// MIOS
     String nombreNuevoArchivo;
-    String tituloBorde = "";
-    TitledBorder bordeEditPanel = new TitledBorder(tituloBorde);
+
     
     /// ELEMENTOS GIT
     boolean salir = false;
@@ -899,7 +1003,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
     int navegacion = 1; // etapa del menu
     
     /// NUEVOEDIT: edicion archivos GITMONITOREO: se muestran resultados de comandos git que solo monitorean (log, status).
-    final static int DEFAULT = 0, NUEVOEDIT = 1, GITMONITOREO = 2;
+    final static int DEFAULT = 0, NUEVOEDIT = 1, GITMONITOREO = 2, EXISTENTEEDIT = 3;
     int estadoAreaTexto = DEFAULT;
     
     
@@ -916,6 +1020,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCommit;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnLog;
@@ -954,6 +1059,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel labelLocalRepo;
     private javax.swing.JLabel labelRemoteRepo;
     private javax.swing.JLabel labelSeleccion;
+    private javax.swing.JLabel labelStatus;
     private javax.swing.JLabel labelSubtitulo;
     private javax.swing.JLabel labelTitleStatus;
     private javax.swing.JLabel labelWorkspace;

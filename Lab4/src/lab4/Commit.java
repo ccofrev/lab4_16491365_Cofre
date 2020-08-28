@@ -76,11 +76,24 @@ public class Commit {
         return hash;
     }
 
+    public String getArchivosStr(){
+        String salida = "";
+        for(Archivo ar: archivos){
+            salida += "\t>" + ar.getNombre() + "\n";
+        }
+        return salida;
+    }
+    
     @Override
     public String toString() {
         return "Commit{\n\t" + usuario + ",\n\ttimestamp: " + timestamp + ",\n\tcomentario: " + comentario + ",\n\tarchivos: " + archivos + "\n}";
     }
 
+    public String toString2() {
+        return " <" + timestamp.toString().replace("T", " ")  + ">\n -comentario: " + comentario + "\n -archivos:\n" + this.getArchivosStr() + "\n";
+    }
+    
+    
     
     
     

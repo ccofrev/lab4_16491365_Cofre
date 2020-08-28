@@ -33,6 +33,15 @@ public class Archivo {
         tsCreacion = LocalDateTime.now();
         tsUltimaModificacion = tsCreacion;
     }
+
+    public Archivo(String nombre, LocalDateTime tsCreacion, LocalDateTime tsUltimaModificacion, String contenido) {
+        this.nombre = nombre;
+        this.tsCreacion = tsCreacion;
+        this.tsUltimaModificacion = tsUltimaModificacion;
+        this.contenido = contenido;
+    }
+    
+    
     
     // getters y setters
     public String getNombre() {
@@ -97,12 +106,16 @@ public class Archivo {
         return true;
     }    
     
-    public boolean reemplazable(Archivo archivo){
-        if(archivo==null)return true;
-        return (!this.equals(archivo) && tsCreacion.compareTo(archivo.getTsCreacion())>=0);        
-    }
 
+    public boolean reemplazable(Archivo archivo){
+        return (archivo==null ||
+                !(this.tsUltimaModificacion.compareTo(archivo.getTsUltimaModificacion())==0) || 
+                !this.contenido.equals(archivo.getContenido()) );
+
+    }
     
-    
+    public Archivo clon() {
+       return new Archivo(nombre, tsCreacion, tsUltimaModificacion, contenido);
+    }
     
 }
