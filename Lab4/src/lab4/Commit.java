@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Carlos Cofre <carlos.cofre@usach.cl>
+ * @author Carlos Cofre [carlos.cofre@usach.cl]
  */
 public class Commit {
     private Usuario usuario;
@@ -90,7 +90,7 @@ public class Commit {
     }
 
     public String toString2() {
-        return " <" + timestamp.toString().replace("T", " ")  + ">\n -comentario: " + comentario + "\n -archivos:\n" + this.getArchivosStr() + "\n";
+        return " <" + timestamp.toString().replace("T", " ")  + ">\n -usuario: " + usuario.getNombre() + "\n -comentario: " + comentario + "\n -archivos:\n" + this.getArchivosStr() + "\n";
     }
     
     

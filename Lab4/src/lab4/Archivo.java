@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 /**
  *
- * @author Carlos Cofre <carlos.cofre@usach.cl>
+ * @author Carlos Cofre [carlos.cofre@usach.cl]
  */
 public class Archivo {
     private String nombre;

@@ -8,7 +8,7 @@ package lab4;
 
 /**
  *
- * @author Carlos Cofre <carlos.cofre@usach.cl>
+ * @author Carlos Cofre [carlos.cofre@usach.cl]
  */
 public class Usuario {
     private String nombre;

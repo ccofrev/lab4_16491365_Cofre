@@ -8,7 +8,7 @@ package lab4;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofré [carlos.cofre@usach.cl]
  */
 public class Utils {
 

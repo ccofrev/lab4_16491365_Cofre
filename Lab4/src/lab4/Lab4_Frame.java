@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofré [carlos.cofre@usach.cl]
  */
 
 
@@ -171,7 +171,7 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         jLayeredPane4.setBackground(new java.awt.Color(0, 204, 51));
 
-        btnEliminar.setForeground(new java.awt.Color(255, 0, 0));
+        btnEliminar.setForeground(new java.awt.Color(153, 0, 0));
         btnEliminar.setText("Eliminar");
         btnEliminar.setEnabled(false);
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -487,10 +487,10 @@ public class Lab4_Frame extends javax.swing.JFrame {
 
         editPanel.setToolTipText("");
 
+        textAreaPrincipal.setEditable(false);
         textAreaPrincipal.setColumns(20);
         textAreaPrincipal.setRows(5);
-        textAreaPrincipal.setText("Simulador GIT\n\nEste programa representa el funcionamiento de un \nsistema controlador de versiones basado en GIT.\n\nTal como se haría en una plataforma como GitHub, \nantes de iniciar con un proyecto, debería existir un registro\nde usuario.\nPara acceder al registro de usuario basta con acceder a \ntravés del menu \"Archivo\" y seleccionar \"Nuevo Usuario\".\nNinguna otra opcion en el programa estara disponible si\nprimero no se registra un usuario con nombre y correo \nelectronico. Para esta simulacion, se considera la \ncreacion de un unico usuario.\nUna vez que se registra un usuario, se puede registrar un\nnuevo repositorio general (un nuevo proyecto). Esto se \nconsigue a través del menu \"Archivo/Nuevo Repositorio\".\nEsta accion es equivalente a usar el comando git init.\nPara esta simulacion se considera la creacion de un \nunico repositorio.\nSe solicitara para esto ingresar un nombre para el\nrepositorio.\nUna vez que se crea el repositorio, se habilita la creacion\nde archivos, en el mismo menu \"Archivo/Nuevo archivo\".\nSe pueden crear multiples archivos, los cuales se cargan\nen la zona de trabajo \"workspace\".\n\nAgregando por lo menos un archivo en el workspace, se\nhabilitaran los comandos GIT. \n\n\n");
-        textAreaPrincipal.setEnabled(false);
+        textAreaPrincipal.setText("Simulador GIT\n\nEste programa representa el funcionamiento de un \nsistema controlador de versiones basado en GIT.\n\nTal como se haría en una plataforma como GitHub, \nantes de iniciar con un proyecto, debería existir un registro\nde usuario.\nPara acceder al registro de usuario basta con acceder a \ntravés del menu \"Archivo\" y seleccionar \"Nuevo Usuario\".\nNinguna otra opcion en el programa estara disponible si\nprimero no se registra un usuario con nombre y correo \nelectronico. Para esta simulacion, se considera la \ncreacion de un unico usuario.\nUna vez que se registra un usuario, se puede registrar un\nnuevo repositorio general (un nuevo proyecto). Esto se \nconsigue a través del menu \"Archivo/Nuevo Repositorio\".\nEsta accion es equivalente a usar el comando git init.\nPara esta simulacion se considera la creacion de un \nunico repositorio.\nSe solicitara para esto ingresar un nombre para el\nrepositorio.\nUna vez que se crea el repositorio, se habilita la creacion\nde archivos, en el mismo menu \"Archivo/Nuevo archivo\".\nSe pueden crear multiples archivos, los cuales se cargan\nen la zona de trabajo \"workspace\".\nLa edicion se realiza en la zona en que esta leyendo. Este\nespacio funcionara tanto para edicion de archivos como \npara la entrega de informacion.\nEl menu de nuevo archivo, tambien sirve para editar archivos\npreviamente creados en el workspace. Basta con escribir el \nnombre de un archivo de un archivo existente. De esta misma \nforma tambien se puede eliminar archivos con el boton \n[Eliminar].\nAgregando por lo menos un archivo en el workspace, se\nhabilitaran los comandos GIT. \n\n\nGit Add\nEste comando se usa para registrar archivos en el index y\nmarcarlos para poder traspasarlos desde el workspace al\nrepositorio local.\nCuando se trate de archivos nuevos, es decir, que estan en el\nworkspace pero que no se habian pasado al local repository, \nse dejan en el index con la marca \"STAGED\". Si se trata de un \narchivo que ya existia en el local repository y se ha modificado,\nse marcara como \"MODIFIED\".\nEl uso es presionando el botón [Add] y luego escribiendo los \nnombres de los archivos que se desean agregar, en el popup.\nEn caso de ser mas de uno, se pueden escribir con un espacio\nde separacion. Si se desea cargar todos los archivos, basta \ncon dejar el cuadro de texto vacio.\n\nGit Commit\nEste comando se usa para dejar un registro de cambio en \nel local repository. Los archivos marcados en el index para ser\ntraspasados, se agregan al local repository, esto ademas de \ncrearse un objeto \"commit\" el cual registra el cambio con el\nmomento en que se realizo, el usuario que hizo el cambio, \ny los archivos involucrados, ademas de un comentario escrito\npor el usuario al momento de ejecutar. Los commit se registran\nen una estructura contenedora especial, en el local repository.\nUna vez que se realiza el commit, los archivos se mantienen \nregistrados en el index, pero se cambia su estado a \n\"COMMITED\".\nEl uso es presionando el boton [Commit] y luego ingresando \nun comentario a traves de un popup.\n\nGit Push\nEste comando traspasa los cambios desde un repositorio local\na un repositorio remoto, es decir, se copian tanto archivos,\ncomo commits.\nLa forma de uso es solo presionando el boton [Push]\n\nGit Pull\nEste comando traspasa los archivos actuales en un repositorio\nremoto, al workspace. En este caso representa a lo que en git \nsería un pull fozado, puesto que reemplaza completamente los \narchivos que existen en el workspace con los que estan en el \nremote repository.\nEl uso es solo presionando el boton [Pull].\n\nGit Log\nFunción que muestra los últimos (5) commits sobre el \nrepositorio, mostrando la informacion asociada a cada commit. \nEl uso es solo presionando el boton [Log]\n\n\nInformacion de repositorios\nEn el esquema superior, se muestra el estado actual de los \nrepositorios, en cuanto a la cantidad de archivos contenidos y\ncommit en el caso de los repositorios. En el caso del index\nse muestra el total de archivos y su descomposicion por estado\nSTAGED, MODIFIED o COMMITED.\nAl presionar el boton [Status] en cada repositorio, se da mayor\ndetalle de los mismos, mostrando un resumen de contenido de \nlos archivos y commit.\n");
         jScrollPane3.setViewportView(textAreaPrincipal);
 
         labelSubtitulo.setText("Instrucciones");
@@ -525,7 +525,9 @@ public class Lab4_Frame extends javax.swing.JFrame {
         editPanelLayout.setHorizontalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLayeredPane3)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+            .addGroup(editPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
