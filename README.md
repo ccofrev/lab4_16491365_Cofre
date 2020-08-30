@@ -7,7 +7,7 @@ javac -cp . lab4/Lab4_Frame.java
 Luego de compiladas las clases, se puede ejecutar el programa llamando a la clase main, con el comando java.
 En este caso, la clase principal lleva por nombre “Lab4”. Así, la ejecución podría hacerse de la siguiente forma
 
-java -cp . lab4/Lab4
+java -cp . lab4/Lab4_Frame
 
 desde el directorio desde donde se compiló.
 El programa considera un menú de opciones donde se pueden probar las diferentes implementaciones, según enunciado.
