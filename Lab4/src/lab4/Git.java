@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class Git {
     
-    final static int WORKSPACE = 1, INDEX = 2, LOCALREPO = 3, REMOTEREPO = 4;
+    public final static int WORKSPACE = 1, INDEX = 2, LOCALREPO = 3, REMOTEREPO = 4;
     
     public static Repositorio init(String nombre, Usuario usuario){
         Workspace workspace = new Workspace("Workspace");
