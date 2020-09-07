@@ -5,7 +5,7 @@
  * Un elemento de esta clase es lo que hace la diferencia entre un directorio normal
  * y una zona de tipo repositorio.
  */
-package lab4;
+package Modelos;
 
 import java.util.ArrayList;
 import java.util.List;

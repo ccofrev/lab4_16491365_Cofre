@@ -7,7 +7,7 @@
  * un comentario y timestamp
  * 
  */
-package lab4;
+package Modelos;
 
 import java.util.List;
 

@@ -2,18 +2,18 @@
  * 
  *   * 
  */
-package vista;
+package Vistas;
 
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-import lab4.Archivo;
-import lab4.Git;
-import lab4.Repositorio;
-import lab4.Usuario;
+import Modelos.Archivo;
+import Modelos.Git;
+import Modelos.Repositorio;
+import Modelos.Usuario;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofré [carlos.cofre@usach.cl]
  */
 public class Ventana extends javax.swing.JFrame {
 
@@ -228,7 +228,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         labelWorkspace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelWorkspace.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/workspace.png"))); // NOI18N
+        labelWorkspace.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/workspace.png"))); // NOI18N
         labelWorkspace.setText("  ");
         labelWorkspace.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -269,7 +269,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         labelIndex.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelIndex.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/index.png"))); // NOI18N
+        labelIndex.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/index.png"))); // NOI18N
         labelIndex.setText(" ");
         labelIndex.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -310,7 +310,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
 
         labelLocalRepo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLocalRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/localrepo.png"))); // NOI18N
+        labelLocalRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/localrepo.png"))); // NOI18N
         labelLocalRepo.setText(" ");
         labelLocalRepo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -351,7 +351,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
 
         labelRemoteRepo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelRemoteRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/remoterepo.png"))); // NOI18N
+        labelRemoteRepo.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/remoterepo.png"))); // NOI18N
         labelRemoteRepo.setText(" ");
         labelRemoteRepo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -424,7 +424,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         labelSeleccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png"))); // NOI18N
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/generico.png"))); // NOI18N
         labelSeleccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         labelTitleStatus.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -655,6 +655,7 @@ public class Ventana extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         String archivos = JOptionPane.showInputDialog("Ingrese archivo(s) para agregar");
+        
         if(archivos.equals("")){
             Git.add(repositorio, repositorio.getWorkspace().getNombresArchivos());
         }
@@ -814,7 +815,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void statusWorkspaceActionPerformed(java.awt.event.ActionEvent evt) {                                                
         
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/workspace.png")));
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/workspace.png")));
         labelSubtitulo.setText("Detalle WS");
         labelTitleStatus.setText("Workspace");
         String statusWS = Git.status(repositorio, Git.WORKSPACE);
@@ -827,7 +828,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void statusIndexActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/index.png")));
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/index.png")));
         labelSubtitulo.setText("Detalle Index");
         labelTitleStatus.setText("Index");
         String statusIN = Git.status(repositorio, Git.INDEX);
@@ -838,7 +839,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void statusLocalRepoActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/localrepo.png")));
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/localrepo.png")));
         labelSubtitulo.setText("Detalle LR");
         labelTitleStatus.setText("Local Repository");
         String statusLR = Git.status(repositorio, Git.LOCALREPO);
@@ -849,7 +850,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void statusRemoteRepoActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/remoterepo.png")));
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/remoterepo.png")));
         labelSubtitulo.setText("Detalle RR");
         labelTitleStatus.setText("Remote Repository");
         String statusRR = Git.status(repositorio, Git.REMOTEREPO);
@@ -870,7 +871,7 @@ public class Ventana extends javax.swing.JFrame {
         estadoAreaTexto = GITMONITOREO;
         // GIT
         
-        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab4/img/generico.png")));
+        labelSeleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("../img/generico.png")));
         labelSubtitulo.setText("GIT Log");
         labelTitleStatus.setText("GIT");
         labelStatus.setText("");
@@ -952,11 +953,6 @@ public class Ventana extends javax.swing.JFrame {
     public static String convertToMultiline(String orig){
         return "<html>" + orig.replaceAll("\n", "<br>");
     }
-    
-    
-    /**
-     * @param args the command line arguments
-     */
 
 
     //// MIOS

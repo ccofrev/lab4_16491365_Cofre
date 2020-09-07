@@ -4,7 +4,7 @@
  * Almacena un comentario, un comentario y un usuario ademas de una lista de 
  * archivos.
  */
-package lab4;
+package Modelos;
 
 import java.time.LocalDateTime;
 import java.util.List;

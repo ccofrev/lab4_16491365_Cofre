@@ -4,7 +4,7 @@
  * esta entidad es necesaria para las funciones de Git que requieren de identificacion
  * de usuario como el Init y el Commit
  */
-package lab4;
+package Modelos;
 
 /**
  *

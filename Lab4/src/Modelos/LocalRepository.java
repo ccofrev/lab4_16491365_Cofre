@@ -6,7 +6,7 @@
  * los commits son objetos que almacenan los archivos relacionados con el cambio, ademas de
  * un comentario y timestamp
  */
-package lab4;
+package Modelos;
 
 import java.util.List;
 

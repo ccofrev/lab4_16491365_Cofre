@@ -2,13 +2,13 @@
  * 
  *   * 
  */
-package lab4;
+package Modelos;
 
-import vista.Ventana;
+import Vistas.Ventana;
 
 /**
  *
- * @author Carlos Cofré <carlos.cofre@usach.cl>
+ * @author Carlos Cofré [carlos.cofre@usach.cl]
  */
 public class Lab4 {
     public static void main(String args[]) {

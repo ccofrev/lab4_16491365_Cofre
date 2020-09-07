@@ -5,7 +5,7 @@
  * a solicitud (add). 
  * 
  */
-package lab4;
+package Modelos;
 
 import java.util.List;
 
